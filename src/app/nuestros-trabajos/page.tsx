@@ -6,7 +6,7 @@ export const metadata: Metadata = {
 
 const NuestrosTrabajosPage = () => {
   return (
-    <div  className="flex w-full h-screen min-h-screen justify-center items-center">Nuestros Trabajos</div>
+    <div  className="flex w-full h-screen min-h-full justify-center items-center text-black">Nuestros Trabajos</div>
   )
 }
 export default NuestrosTrabajosPage
