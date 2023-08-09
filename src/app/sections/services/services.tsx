@@ -25,14 +25,21 @@ const ServicesItems: { name: string; description: string; image: string }[] = [
 		description:
 			'Dos Metal Construcciones ofrece soluciones de construcción en seco de alta calidad. Nuestros profesionales cuentan con años de experiencia en la instalación de sistemas de construcción en seco, garantizando un trabajo eficiente y duradero. Contáctanos hoy para obtener más información sobre cómo podemos ayudarte a construir tu proyecto de manera segura y sostenible.',
 		image: 'https://res.cloudinary.com/dri8dkmhr/image/upload/v1676315119/homeBanners/Banner%20Construcciones%20en%20seco.webp'
-	},
+	}
 ];
 
 const Services = () => {
 	return (
 		<section
 			id='services'
-			className='flex flex-col w-full min-h-screen bg-teal-800 text-black gap-3  p-8 pt-10'>
+			className='flex flex-col w-full min-h-screen  text-black gap-3  p-8 pt-10'
+			style={{
+				backgroundColor: '#134e4a',
+				opacity: '1',
+				backgroundImage:
+					'radial-gradient(#5e5e5e 0.8500000000000001px, #134e4a 0.8500000000000001px)',
+				backgroundSize: '17px 17px'
+			}}>
 			<header className='flex flex-col gap-3 items-center p-5'>
 				<h1 className='text-7xl text-white'>De la idea a la realidad</h1>
 				<h2 className='text-3xl text-gray-400'>Nuestros Servicios de construccion</h2>
