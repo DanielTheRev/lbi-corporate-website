@@ -4,12 +4,13 @@ import { Roboto } from 'next/font/google';
 import Navbar from './components/Navbar/Navbar';
 import ContactoPage from './contacto/page';
 import NuestrosTrabajosPage from './nuestros-trabajos/page';
+import Footer from './components/Footer/Footer';
 
 const ubuntu = Roboto({
 	subsets: ['latin'],
 	variable: '--font-Roboto',
 	weight: ['500'],
-	preload: true,
+	preload: true
 });
 
 export const metadata: Metadata = {
@@ -20,9 +21,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
 		<html lang='es'>
-			<body className={ubuntu.className + ' flex flex-col h-screen w-full'}>
+			<body className={ubuntu.className + ' flex flex-col min-h-screen w-full'}>
 				<Navbar />
-				<main className='flex flex-col w-full h-max gap-2 text-white'>{children}</main>
+				<main className='flex flex-col w-full h-max text-white'>{children}</main>
+				<Footer />
 			</body>
 		</html>
 	);

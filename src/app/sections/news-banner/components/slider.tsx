@@ -18,12 +18,8 @@ const Slider = () => {
 			pagination={{ clickable: true }}
 			onSwiper={(swiper) => console.log(swiper)}
 			onSlideChange={() => console.log('slide change')}>
-			{/* <SwiperSlide className='w-full h-full'>Slide 1</SwiperSlide>
-			<SwiperSlide className='w-full h-full'>Slide 2</SwiperSlide>
-			<SwiperSlide className='w-full h-full'>Slide 3</SwiperSlide>
-			<SwiperSlide className='w-full h-full'>Slide 4</SwiperSlide> */}
 			<SwiperSlide className='w-full h-full'>
-				<article className='w-full h-max flex justify-between items-start gap-3 rounded bg-teal-800 mt-5 p-5 shadow-lg shadow-gray-700'>
+				<article className='w-full h-max flex justify-between items-start gap-3 rounded  mt-5 p-5'>
 					<picture
 						className='rounded-full overflow-hidden border-2 border-gray-800 bg-gray-200'
 						style={{
@@ -78,7 +74,7 @@ const Slider = () => {
 				</article>
 			</SwiperSlide>
 			<SwiperSlide className='w-full h-full'>
-				<article className='w-full h-max flex justify-between items-start gap-3 rounded bg-teal-800 mt-5 p-5 shadow-lg shadow-gray-700'>
+				<article className='w-full h-max flex justify-between items-start gap-3 rounded  mt-5 p-5'>
 					<picture
 						className='rounded-full overflow-hidden border-2 border-gray-800 bg-gray-200'
 						style={{
@@ -133,7 +129,7 @@ const Slider = () => {
 				</article>
 			</SwiperSlide>
 			<SwiperSlide className='w-full h-full'>
-				<article className='w-full h-max flex justify-between items-start gap-3 rounded bg-teal-800 mt-5 p-5 shadow-lg shadow-gray-700'>
+				<article className='w-full h-max flex justify-between items-start gap-3 rounded  mt-5 p-5'>
 					<picture
 						className='rounded-full overflow-hidden border-2 border-gray-800 bg-gray-200'
 						style={{
