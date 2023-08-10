@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { Roboto } from 'next/font/google';
 import Navbar from './components/Navbar/Navbar';
 import ContactoPage from './contacto/page';
-import NuestrosTrabajosPage from './nuestros-trabajos/page';
+import NuestrosTrabajosPage from './nuestros-trabajos/layout';
 import Footer from './components/Footer/Footer';
 
 const ubuntu = Roboto({
