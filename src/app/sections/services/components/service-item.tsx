@@ -18,7 +18,6 @@ const ServiceItem = ({ service }: any) => {
 				</picture>
 				<picture className='relative'>
 					<Image
-			
 						src={service.image}
 						width={1920}
 						height={1080}

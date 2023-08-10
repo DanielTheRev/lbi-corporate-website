@@ -13,13 +13,13 @@ type Props = {
 const NuestrosTrabajosNavbar = ({ Routes }: Props) => {
 	const pathName = usePathname();
 	return (
-		<nav className='flex w-full bg-slate-500'>
+		<nav className='flex w-full bg-teal-900'>
 			<ul className='flex w-full justify-center gap-3 p-3'>
 				{Routes.map(({ label, route }, i) => (
 					<li
 						key={i}
 						className={`${
-							'/nuestros-trabajos' + route === pathName ? 'text-white' : 'text-gray-700'
+							'/nuestros-trabajos' + route === pathName ? 'text-white' : 'text-gray-500'
 						} cursor-default`}>
 						<Link href={'/nuestros-trabajos' + route}>{label}</Link>
 					</li>

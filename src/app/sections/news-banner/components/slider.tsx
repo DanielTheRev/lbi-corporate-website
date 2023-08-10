@@ -14,10 +14,8 @@ const Slider = () => {
 			spaceBetween={50}
 			className='h-full w-full'
 			slidesPerView={1}
-      autoplay
-			pagination={{ clickable: true }}
-			onSwiper={(swiper) => console.log(swiper)}
-			onSlideChange={() => console.log('slide change')}>
+			autoplay
+			pagination={{ clickable: true }}>
 			<SwiperSlide className='w-full h-full'>
 				<article className='w-full h-max flex justify-between items-start gap-3 rounded  mt-5 p-5'>
 					<picture
