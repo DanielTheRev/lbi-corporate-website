@@ -7,7 +7,7 @@ import { usePathname } from 'next/navigation';
 const Routes = [
 	// { label: 'Inicio', route: '/' },
 	{ label: 'Trabajos', route: '/nuestros-trabajos/Montajes-Industriales' },
-	{ label: 'Contactanos', route: '/contacto' }
+	{ label: 'Contactanos', route: '#footer' }
 ];
 
 function Navbar() {

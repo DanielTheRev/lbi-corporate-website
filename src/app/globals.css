@@ -9,6 +9,7 @@
 }
 body {
 	@apply bg-teal-900;
+	scroll-behavior: smooth;
 }
 
 #navbar,

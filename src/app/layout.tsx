@@ -23,7 +23,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 		<html lang='es'>
 			<body className={ubuntu.className + ' flex flex-col min-h-screen w-full'}>
 				<Navbar />
-				<main className='flex flex-col w-full h-max text-white'>{children}</main>
+				<main className='flex flex-col w-full h-max justify-between text-white'>{children}</main>
 				<Footer />
 			</body>
 		</html>
