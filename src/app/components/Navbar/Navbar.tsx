@@ -12,7 +12,6 @@ const Routes = [
 
 function Navbar() {
 	const pathName = usePathname();
-	console.log(pathName);
 	return (
 		<header className='flex w-full justify-center items-center p-4' id='navbar'>
 			<nav className='flex w-3/4 justify-between items-center'>

@@ -20,7 +20,7 @@ const TrabajosPage = async ({ params }: any) => {
 	const LastProject = sectionData.data.find((project) => project.isLastProject);
 
 	return (
-		<article className='flex flex-col w-full h-full min-h-screen '>
+		<article className='flex flex-col w-full h-full min-h-screen animate-fade-down animate-duration-[2000ms]'>
 			<header className='w-full text-center p-5 bg-teal-800'>
 				<h1 className='text-2xl text-white'>Nuestros trabajos de {sectionData.section}</h1>
 			</header>
@@ -51,7 +51,9 @@ const TrabajosPage = async ({ params }: any) => {
 					</div>
 				</section>
 			)}
-			{sectionData.data.length <= 0 && <h1>Todavia no hay proyectos que mostrar</h1>}
+			{sectionData.data.length <= 0 && 
+			<section className='flex w-full h-screen justify-center items-center text-2xl text-white'>Todavia no hay proyectos que mostrar</section>
+			}
 			{sectionData.data.length >= 1 && (
 				<section className='flex flex-col w-full h-full bg-teal-700 text-white p-3 '>
 					<header className='flex w-full justify-start'>
@@ -69,8 +71,9 @@ const TrabajosPage = async ({ params }: any) => {
 							gap: '0.5rem'
 						}}>
 						{/* <ProjectSlider data={sectionData.data} /> */}
-						{sectionData.data.map(
-							({ _id, ProjectTitle, ProjectImgs, ProjectDescription }) => (
+						{sectionData.data
+							.filter((project) => !project.isLastProject)
+							.map(({ _id, ProjectTitle, ProjectImgs, ProjectDescription }) => (
 								<div
 									key={_id}
 									className='flex w-full h-full overflow-hidden bg-slate-200 text-black rounded'>
@@ -93,8 +96,7 @@ const TrabajosPage = async ({ params }: any) => {
 										</button>
 									</div>
 								</div>
-							)
-						)}
+							))}
 					</div>
 				</section>
 			)}

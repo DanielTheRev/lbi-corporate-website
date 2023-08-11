@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 const NewsBanner = () => {
 	return (
 		<section
-			className='w-full h-full min-h-screen overflow-x-hidden bg-stone-200 px-8 pb-8'
+			className='w-full h-full min-h-screen overflow-x-hidden bg-stone-200 px-8 pb-8 animate-fade-down animate-duration-[2000ms]'
 			id='banner-news'>
 			<Slider />
 		</section>

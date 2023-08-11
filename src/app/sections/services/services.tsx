@@ -32,7 +32,7 @@ const Services = () => {
 	return (
 		<section
 			id='services'
-			className='flex flex-col w-full min-h-screen  text-black gap-3  p-8 pt-10'
+			className='flex flex-col w-full min-h-screen  text-black gap-3  p-8 pt-10 animate-fade-down animate-duration-[2000ms]'
 			style={{
 				backgroundColor: '#134e4a',
 				opacity: '1',

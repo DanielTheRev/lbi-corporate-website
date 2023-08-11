@@ -6,12 +6,17 @@ export const metadata: Metadata = {
 };
 
 const fetchSections = async () => {
-	const res = await fetch('https://dosmetal.com.ar/api/dosmetal-page/projects/getSections');
+	const res = await fetch('https://dosmetal.com.ar/api/dosmetal-page/projects/getSections', {
+		next: {
+			revalidate: 60000
+		}
+	});
+	console.log('fetching secctions');
 	const data = await res.json();
 	const routes = data.reverse().map((route: any) => ({
 		_id: route._id,
 		label: route.section,
-		route: `/${(route.section).split(' ').join('-')}`
+		route: `/${route.section.split(' ').join('-')}`
 	}));
 	return routes;
 };

@@ -7,13 +7,17 @@
 	--background-start-rgb: 214, 219, 220;
 	--background-end-rgb: 255, 255, 255;
 }
-
-#navbar, #banner-news {
-  @apply bg-teal-900;
+body {
+	@apply bg-teal-900;
 }
 
-#services > article:nth-child(even) #title{
-	@apply text-left
+#navbar,
+#banner-news {
+	@apply bg-teal-900;
+}
+
+#services > article:nth-child(even) #title {
+	@apply text-left;
 }
 
 @media (prefers-color-scheme: dark) {
