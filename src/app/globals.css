@@ -21,7 +21,7 @@ body {
 	@apply bg-teal-900;
 }
 
-#services > article:nth-child(even) #title {
+#services > div >  article:nth-child(even) #title {
 	@apply text-left;
 }
 
