@@ -32,7 +32,7 @@ const Services = () => {
 	return (
 		<section
 			id='services'
-			className='flex flex-col w-full min-h-screen  text-black gap-3  p-8 pt-10 animate-fade-down animate-duration-[2000ms]'
+			className='flex flex-col w-full min-h-screen  text-black gap-3 max-[400px]:p-2  p-8 pt-10 animate-fade-down animate-duration-[2000ms]'
 			style={{
 				backgroundColor: '#134e4a',
 				opacity: '1',
@@ -41,8 +41,10 @@ const Services = () => {
 				backgroundSize: '17px 17px'
 			}}>
 			<header className='flex flex-col gap-3 items-center p-5'>
-				<h1 className='text-7xl text-white'>De la idea a la realidad</h1>
-				<h2 className='text-3xl text-gray-400'>Nuestros Servicios de construccion</h2>
+				<h1 className='text-7xl max-[400px]:text-xl text-white'>De la idea a la realidad</h1>
+				<h2 className='text-3xl max-[400px]:text-md text-gray-400'>
+					Nuestros Servicios de construccion
+				</h2>
 			</header>
 			{/* <article className=' flex min-h-full w-full items-center justify-center p-4 '>
 				<div className='w-3/6 min-h-full h-full gap-5 flex flex-col items-center'>
@@ -72,9 +74,11 @@ const Services = () => {
 					</picture>
 				</div>
 			</article> */}
-			{ServicesItems.map((service, i) => (
-				<ServiceItem key={i} service={service} />
-			))}
+			<div className='flex flex-col w-full h-full gap-10'>
+				{ServicesItems.map((service, i) => (
+					<ServiceItem key={i} service={service} />
+				))}
+			</div>
 		</section>
 	);
 };
