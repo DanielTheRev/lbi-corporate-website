@@ -22,7 +22,7 @@ const TrabajosPage = async ({ params }: any) => {
 	return (
 		<article className='flex flex-col w-full h-full min-h-screen animate-fade-down animate-duration-[2000ms]'>
 			<header className='w-full text-center p-5 bg-teal-800'>
-				<h1 className='text-2xl text-white'>Nuestros trabajos de {sectionData.section}</h1>
+				<h1 className='text-2xl max-[400px]:text-xl text-white'>Nuestros trabajos de {sectionData.section}</h1>
 			</header>
 			{LastProject && (
 				<section className='flex flex-col items-end w-full p-3 bg-teal-800 text-white shadow-lg z-10'>
@@ -52,7 +52,7 @@ const TrabajosPage = async ({ params }: any) => {
 				</section>
 			)}
 			{sectionData.data.length <= 0 && 
-			<section className='flex w-full h-screen justify-center items-center text-2xl text-white'>Todavia no hay proyectos que mostrar</section>
+			<section className='flex w-full h-screen justify-center items-center text-2xl max-[400px]:text-xl text-white'>Todavia no hay proyectos que mostrar</section>
 			}
 			{sectionData.data.length >= 1 && (
 				<section className='flex flex-col w-full h-full bg-teal-700 text-white p-3 '>
@@ -60,13 +60,13 @@ const TrabajosPage = async ({ params }: any) => {
 						<h3 className='text-2xl p-2 pb-3'>Explora nuestros proyectos</h3>
 					</header>
 					<div
-						className='w-full h-full'
+						className='w-full h-full max-[400px]:grid-cols-1'
 						style={{
 							display: 'grid',
 							width: '100%',
 							height: '100%',
-							gridTemplateColumns: ' repeat(auto-fill,minmax(35rem,1fr))',
-							gridAutoRows: '12rem',
+							gridTemplateColumns: ' repeat(auto-fill,minmax(26rem,1fr)',
+							gridAutoRows: 'auto',
 							padding: '0.4rem',
 							gap: '0.5rem'
 						}}>
