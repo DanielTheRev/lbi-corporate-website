@@ -6,12 +6,12 @@ export const metadata: Metadata = {
 };
 
 const fetchSections = async () => {
-	const res = await fetch('https://dosmetal.com.ar/api/dosmetal-page/projects/getSections', {
+	const res = await fetch(`${process.env.SERVER_URL}/projects/getSections`, {
 		next: {
 			revalidate: 60000
 		}
 	});
-	console.log('fetching secctions');
+
 	const data = await res.json();
 	const routes = data.reverse().map((route: any) => ({
 		_id: route._id,
@@ -26,7 +26,6 @@ const NuestrosTrabajosLayout = async ({ children }: any) => {
 	return (
 		<section className='flex flex-col w-full min-h-full justify-center text-black scroll-smooth'>
 			<NuestrosTrabajosNavbar Routes={routes} />
-			{/* <div className='flex h-full'></div> */}
 			{children}
 		</section>
 	);

@@ -2,7 +2,7 @@ import { Project } from '../../models/projects.model';
 import ProjectSlider from '../components/projectsSlider';
 
 const getProjectData = async (data: { section: string; _id: string }) => {
-	const res = await fetch('http://localhost:3000/api/dosmetal-page/projects/getProject', {
+	const res = await fetch(`${process.env.SERVER_URL}/projects/getProject`, {
 		method: 'POST',
 		body: JSON.stringify(data),
 		mode: 'cors',
@@ -12,7 +12,6 @@ const getProjectData = async (data: { section: string; _id: string }) => {
 		cache: 'no-cache'
 	});
 	const project = (await res.json()) as { status: string; project: Project };
-	console.log(project);
 	return project;
 };
 interface Params {

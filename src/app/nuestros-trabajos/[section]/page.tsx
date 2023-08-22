@@ -1,19 +1,21 @@
-import axios from 'axios';
 import { Section } from '../models/projects.model';
 import Image from 'next/image';
-import ProjectSlider from './components/projectsSlider';
 import Link from 'next/link';
 
 const getSectionData = async (section: string) => {
 	const body = {
 		section: section.split('-').join(' ')
 	};
-
-	const res = await axios.post(
-		'https://dosmetal.com.ar/api/dosmetal-page/projects/getSectionData',
-		body
-	);
-	return res.data as Section;
+	const res = await fetch(`${process.env.SERVER_URL}/projects/getSectionData`, {
+		method: 'POST',
+		body: JSON.stringify(body),
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		cache: 'no-cache'
+	});
+	const data = await res.json();
+	return data as Section;
 };
 
 const TrabajosPage = async ({ params }: any) => {
