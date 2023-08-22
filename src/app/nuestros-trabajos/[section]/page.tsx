@@ -2,6 +2,7 @@ import axios from 'axios';
 import { Section } from '../models/projects.model';
 import Image from 'next/image';
 import ProjectSlider from './components/projectsSlider';
+import Link from 'next/link';
 
 const getSectionData = async (section: string) => {
 	const body = {
@@ -22,15 +23,22 @@ const TrabajosPage = async ({ params }: any) => {
 	return (
 		<article className='flex flex-col w-full h-full min-h-screen animate-fade-down animate-duration-[2000ms]'>
 			<header className='w-full text-center p-5 bg-teal-800'>
-				<h1 className='text-2xl max-[400px]:text-xl text-white'>Nuestros trabajos de {sectionData.section}</h1>
+				<h1 className='text-2xl max-[400px]:text-xl text-white'>
+					Nuestros trabajos de {sectionData.section}
+				</h1>
 			</header>
 			{LastProject && (
 				<section className='flex flex-col items-end w-full p-3 bg-teal-800 text-white shadow-lg z-10'>
 					<span className='bg-blue-700 p-2 rounded-full text-sm text-white'>
 						Nuestro proyecto mas reciente
 					</span>
-					<h2 className='w-full p-5 pl-0 pb-0 text-left text-2xl'>
+					<h2 className='w-full p-5 pl-0 pb-0 text-left text-2xl flex items-center justify-center gap-2'>
 						{LastProject.ProjectTitle}
+						<button className='py-1 px-2 bg-blue-600 text-white rounded text-sm'>
+							<Link href={`${sectionData.section.split(' ').join('-')}/${LastProject._id}`}>
+								Ver Obra
+							</Link>
+						</button>
 					</h2>
 					<div className='flex flex-col w-full overflow-hidden gap-4'>
 						<p className='w-full p-2 text-justify text-slate-300'>
@@ -51,9 +59,11 @@ const TrabajosPage = async ({ params }: any) => {
 					</div>
 				</section>
 			)}
-			{sectionData.data.length <= 0 && 
-			<section className='flex w-full h-screen justify-center items-center text-2xl max-[400px]:text-xl text-white'>Todavia no hay proyectos que mostrar</section>
-			}
+			{sectionData.data.length <= 0 && (
+				<section className='flex w-full h-screen justify-center items-center text-2xl max-[400px]:text-xl text-white'>
+					Todavia no hay proyectos que mostrar
+				</section>
+			)}
 			{sectionData.data.length >= 1 && (
 				<section className='flex flex-col w-full h-full bg-teal-700 text-white p-3 '>
 					<header className='flex w-full justify-start'>
@@ -92,7 +102,9 @@ const TrabajosPage = async ({ params }: any) => {
 											{ProjectDescription}
 										</p>
 										<button className='bg-blue-600 p-1 px-2 rounded text-white'>
-											Ver Obra
+											<Link href={`${sectionData.section.split(' ').join('-')}/${_id}`}>
+												Ver Obra
+											</Link>
 										</button>
 									</div>
 								</div>

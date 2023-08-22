@@ -19,7 +19,7 @@ const NuestrosTrabajosNavbar = ({ Routes }: Props) => {
 					<li
 						key={i}
 						className={`${
-							'/nuestros-trabajos' + route === pathName ? 'text-white' : 'text-gray-500'
+							pathName.includes(route.split('/')[1]) ? 'text-white' : 'text-gray-500'
 						} cursor-default`}>
 						<Link href={'/nuestros-trabajos' + route}>{label}</Link>
 					</li>
