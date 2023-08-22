@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 const getInfo = async () => {
 	const res = await fetch(
-		'http://localhost:3000/api/dosmetal-page/presentacion/getInfoPresentacion',
+		`${process.env.SERVER_URL}/presentacion/getInfoPresentacion`,
 		{
 			cache: 'no-cache'
 		}
