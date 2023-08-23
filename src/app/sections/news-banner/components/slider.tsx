@@ -27,7 +27,7 @@ const Slider = ({ data }: Props) => {
 		<Swiper
 			modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
 			spaceBetween={50}
-			className='h-[550px] w-full'
+			className='h-[600px] w-full'
 			slidesPerView={1}
 			autoplay
 			pagination={{ clickable: true }}>
@@ -65,8 +65,8 @@ const Slider = ({ data }: Props) => {
 			</SwiperSlide>
 
 			{NewsList.map((News) => (
-				<SwiperSlide className='w-full h-full' key={News._id}>
-					<article className='flex w-full h-full gap-3 bg-teal-950 shadow-lg p-5 pb-7'>
+				<SwiperSlide className='w-full h-full py-2' key={News._id}>
+					<article className='grid grid-cols-1 grid-rows-2 w-full h-full gap-3 bg-teal-950 shadow-lg p-5 pb-7'>
 						<div className='flex flex-col justify-center h-full w-full p-5'>
 							<header className='text-center'>
 								<h1 className='text-3xl'>{News.title}</h1>
@@ -76,15 +76,17 @@ const Slider = ({ data }: Props) => {
 							</div>
 						</div>
 
-						<div className='flex w-full h-full flex-col overflow-hidden shadow-lg rounded'>
+						<div className='flex w-full h-full overflow-hidden shadow-lg rounded border'>
 							{News.images.map((image) => (
 								<div className='w-full h-full relative overflow-hidden' key={image._id}>
-									<Image
-										src={image.imgRef.secure_url}
-										className='object-cover'
-										alt={News.title}
-										fill
-									/>
+									{image.imgRef && (
+										<Image
+											src={image.imgRef.secure_url}
+											className='object-cover'
+											alt={News.title}
+											fill
+										/>
+									)}
 								</div>
 							))}
 						</div>
