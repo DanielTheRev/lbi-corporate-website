@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import ServiceItem from './components/service-item';
+import { HomeBannerType } from '../models/service.model';
 
 const ServicesItems: { name: string; description: string; image: string }[] = [
 	{
@@ -28,7 +29,15 @@ const ServicesItems: { name: string; description: string; image: string }[] = [
 	}
 ];
 
-const Services = () => {
+const FetchServices = async () => {
+	const res = await fetch(`${process.env.SERVER_URL}/homeBanner/getHomeBanners`);
+	const data = await res.json();
+	return data as HomeBannerType[];
+};
+
+const Services = async () => {
+	const service_data = await FetchServices();
+
 	return (
 		<section
 			id='services'
@@ -46,36 +55,8 @@ const Services = () => {
 					Nuestros Servicios de construccion
 				</h2>
 			</header>
-			{/* <article className=' flex min-h-full w-full items-center justify-center p-4 '>
-				<div className='w-3/6 min-h-full h-full gap-5 flex flex-col items-center'>
-					<h1 className='text-4xl text-white'>Aberturas de PVC</h1>
-					<p className='h-full text-slate-500 text-justify p-4'>
-						Dos Metal Construcciones ofrece instalación de aberturas de PVC de alta calidad.
-						Nuestras aberturas son resistentes, duraderas y eficientes en el aislamiento
-						térmico y acústico. Además, ofrecemos una amplia variedad de diseños y colores
-						para adaptarse a tus necesidades estéticas. Contamos con un equipo altamente
-						capacitado y experimentado en la instalación de aberturas de PVC, garantizando un
-						trabajo preciso y seguro. No dudes en contactarnos para obtener una cotización y
-						descubrir cómo podemos ayudarte a mejorar la eficiencia energética de tu hogar o
-						edificio comercial con nuestras aberturas de PVC de alta calidad.
-					</p>
-				</div>
-				<div className='relative w-3/6 rounded overflow-hidden'>
-					<picture className='w-full h-full'>
-						<Image
-							className='w-full h-full'
-							src={
-								'https://res.cloudinary.com/dri8dkmhr/image/upload/v1679508755/homeBanners/Aberturas%20de%20PVC.jpg'
-							}
-							width={1920}
-							height={1080}
-							alt='Abertura de pcv'
-						/>
-					</picture>
-				</div>
-			</article> */}
 			<div className='flex flex-col w-full h-full gap-10'>
-				{ServicesItems.map((service, i) => (
+				{service_data.map((service, i) => (
 					<ServiceItem key={i} service={service} />
 				))}
 			</div>
