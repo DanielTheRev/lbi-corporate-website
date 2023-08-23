@@ -32,13 +32,13 @@ const Slider = ({ data }: Props) => {
 			autoplay
 			pagination={{ clickable: true }}>
 			<SwiperSlide className='w-full h-full'>
-				<article className='w-full h-full grid grid-cols-3 gap-3 p-5 pb-7  bg-teal-950 shadow-lg '>
+				<article className='w-full h-full grid sm:grid-cols-1  md:grid-cols-3 md:gap-3 p-5 pb-7  bg-teal-950 shadow-lg '>
 					<picture className='relative w-full h-full rounded overflow-hidden bg-white '>
 						<Image src='https://dosmetal.com.ar/assets/logomaira.svg' alt='algo' fill />
 						{/* <Image src='/logo.jpg' alt='algo' fill /> */}
 					</picture>
 
-					<div className='flex flex-col h-full items-center gap-5 flex-grow col-start-2 col-end-4 text-white'>
+					<div className='flex flex-col h-full items-center gap-5 flex-grow md:col-start-2 md:col-end-4 text-white'>
 						<header className='text-center'>
 							<h1 className='text-2xl'>Somos LBI CONSTRUCCIONES </h1>
 						</header>
@@ -66,12 +66,12 @@ const Slider = ({ data }: Props) => {
 
 			{NewsList.map((News) => (
 				<SwiperSlide className='w-full h-full py-2' key={News._id}>
-					<article className='grid grid-cols-1 grid-rows-2 w-full h-full gap-3 bg-teal-950 shadow-lg p-5 pb-7'>
-						<div className='flex flex-col justify-center h-full w-full p-5'>
+					<article className='grid grid-cols-1 grid-rows-2 w-full h-full gap-3 sm:gap-1  bg-teal-950 shadow-lg p-5 pb-7'>
+						<div className='flex flex-col justify-center h-full w-full p-5 sm:p-1'>
 							<header className='text-center'>
 								<h1 className='text-3xl'>{News.title}</h1>
 							</header>
-							<div className='text-gray-300 text-lg text-center p-5 py-8'>
+							<div className='text-gray-300 text-lg text-center p-5 py-8 sm:p-2 text-ellipsis overflow-hidden'>
 								{News.description}
 							</div>
 						</div>
@@ -106,7 +106,7 @@ const Slider = ({ data }: Props) => {
 									{project.last_project.ProjectTitle}
 								</h2>
 								<div className='flex flex-col w-full h-full overflow-hidden gap-4'>
-									<p className='w-full p-2 text-justify text-slate-300'>
+									<p className='w-full p-2 text-justify text-slate-300 overflow-hidden sm:text-sm'>
 										{project.last_project.ProjectDescription}
 									</p>
 									<section className='flex w-full h-full rounded border overflow-hidden'>
