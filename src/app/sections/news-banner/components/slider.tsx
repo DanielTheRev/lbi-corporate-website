@@ -54,7 +54,7 @@ const Slider = ({ data }: Props) => {
 									<Image
 										src={image.imgRef.secure_url}
 										className='object-cover'
-										alt='algo'
+										alt={Presentacion.description}
 										fill
 									/>
 								</div>

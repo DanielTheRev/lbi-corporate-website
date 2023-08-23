@@ -25,7 +25,6 @@ const getInfo = async () => {
 			last_project: Project;
 		}[];
 	};
-	console.log(data);
 
 	return data;
 };
