@@ -66,11 +66,11 @@ const Slider = ({ data }: Props) => {
 			{NewsList.map((News) => (
 				<SwiperSlide className='w-full h-full py-2' key={News._id}>
 					<article className='flex flex-col w-full h-full gap-3  bg-teal-950 shadow-lg p-2'>
-						<div className='flex flex-col justify-start max-h-[50%] w-full gap-3 p-2'>
+						<div className='flex flex-col justify-start  w-full gap-3 p-2'>
 							<header className='text-center'>
 								<h1 className='text-3xl'>{News.title}</h1>
 							</header>
-							<p className='text-gray-300 w-full h-full text-md text-justify p-2'>
+							<p className='text-gray-300 w-full h-full text-md md:text-lg text-justify p-2'>
 								{News.description}
 							</p>
 						</div>
