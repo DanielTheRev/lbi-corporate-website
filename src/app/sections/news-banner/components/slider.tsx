@@ -65,14 +65,14 @@ const Slider = ({ data }: Props) => {
 
 			{NewsList.map((News) => (
 				<SwiperSlide className='w-full h-full py-2' key={News._id}>
-					<article className='grid grid-cols-1 grid-rows-2 w-full h-full gap-3 sm:gap-1  bg-teal-950 shadow-lg p-5 pb-7'>
-						<div className='flex flex-col justify-center h-full w-full p-5 sm:p-1'>
+					<article className='flex flex-col w-full h-full gap-3  bg-teal-950 shadow-lg p-2'>
+						<div className='flex flex-col justify-start max-h-[50%] w-full gap-3 p-2'>
 							<header className='text-center'>
 								<h1 className='text-3xl'>{News.title}</h1>
 							</header>
-							<div className='text-gray-300 text-lg text-center p-5 py-8 sm:p-2 text-ellipsis overflow-hidden'>
+							<p className='text-gray-300 w-full h-full text-md text-justify p-2'>
 								{News.description}
-							</div>
+							</p>
 						</div>
 
 						<div className='flex w-full h-full overflow-hidden shadow-lg rounded border'>
@@ -105,7 +105,7 @@ const Slider = ({ data }: Props) => {
 									{project.last_project.ProjectTitle}
 								</h2>
 								<div className='flex flex-col w-full h-full overflow-hidden gap-4'>
-									<p className='w-full p-2 text-justify text-slate-300 overflow-hidden sm:text-sm'>
+									<p className='w-full p-2 text-justify text-slate-300'>
 										{project.last_project.ProjectDescription}
 									</p>
 									<section className='flex w-full h-full rounded border overflow-hidden'>
