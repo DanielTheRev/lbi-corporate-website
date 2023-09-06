@@ -34,8 +34,7 @@ const Slider = ({ data }: Props) => {
 			<SwiperSlide className='w-full h-full'>
 				<article className='w-full h-full grid sm:grid-cols-1  md:grid-cols-3 md:gap-3 p-5 pb-7  bg-teal-950 shadow-lg '>
 					<picture className='relative w-full h-full rounded overflow-hidden bg-white '>
-						<Image src='https://dosmetal.com.ar/assets/logomaira.svg' alt='algo' fill />
-						{/* <Image src='/logo.jpg' alt='algo' fill /> */}
+						<Image src='/logo.png' alt='algo' className='object-contain p-2' fill />
 					</picture>
 
 					<div className='flex flex-col h-full items-center gap-5 flex-grow md:col-start-2 md:col-end-4 text-white'>

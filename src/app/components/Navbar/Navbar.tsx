@@ -16,8 +16,7 @@ function Navbar() {
 		<header className='flex w-full justify-center items-center p-4 max-[400px]:p-2' id='navbar'>
 			<nav className='flex w-4/5 max-[400px]:w-full p-2 max-[400px]:p-0 justify-between items-center'>
 				<Link href={'/'} className='w-40 h-10 relative object-cover'>
-					{/* <Image src={'https://dosmetal.com.ar/assets/logomaira.svg'} alt='logo' fill /> */}
-					<Image src={'/logo.jpg'} alt='logo' width={1920} height={1080}  className='w-full h-full object-contain'/>
+					<Image src={'/logo.png'} alt='logo' fill />
 				</Link>
 				<ul className='flex gap-2'>
 					{Routes.map(({ label, route }) => (
