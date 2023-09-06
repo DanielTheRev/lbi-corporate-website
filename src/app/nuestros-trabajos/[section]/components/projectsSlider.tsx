@@ -17,7 +17,7 @@ const ProjectSlider = ({ data }: Props) => {
 		<Swiper
 			modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
 			spaceBetween={50}
-			className='h-full w-full border'
+			className='h-screen w-full border'
 			slidesPerView={1}
 			autoplay
 			navigation
@@ -25,7 +25,7 @@ const ProjectSlider = ({ data }: Props) => {
 			{data.ProjectImgs.map((image) => (
 				<SwiperSlide key={image.asset_id} className='flex w-full h-full overflow-hidden'>
 					<picture className='flex relative w-full h-full'>
-						<Image src={image.secure_url} alt='' fill className='object-cover'/>
+						<Image src={image.secure_url} alt='' fill className='object-contain'/>
 					</picture>
 				</SwiperSlide>
 			))}
