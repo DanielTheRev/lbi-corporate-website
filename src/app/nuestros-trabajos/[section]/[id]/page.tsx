@@ -16,21 +16,20 @@ const getProjectData = async (data: { section: string; _id: string }) => {
 };
 interface Params {
 	params: { section: string; id: string };
-	searchParams: {};
 }
 
 const TrabajoPage = async ({ params: { id, section } }: Params) => {
 	const { project } = await getProjectData({ section: section.split('-').join(' '), _id: id });
 
 	return (
-		<section className='grid grid-cols-1 grid-rows-[max-content_1fr] w-full min-h-screen bg-teal-950 text-white p-2'>
-			<header className='flex justify-center h-full items-center w-full p-3'>
-				<h1 className='text-xl'>{project.ProjectTitle}</h1>
-			</header>
-			<div className='grid grid-rows-[max-content_1fr] items-center w-full gap-2 max-[500px]:grid-cols-1 max-[500px]:grid-rows-2 min-h-full p-2 overflow-hidden'>
-				<p className='info-bar w-full h-full border bg-gray-200 rounded text-gray-800 font-bold px-2 py-4 max-[500px]:h-max'>
+		<section className='flex  w-full flex-grow h-full bg-slate-950/30 text-white p-2'>
+			<header className='flex flex-col justify-center h-full items-center w-full p-3'>
+				<h1 className='text-2xl text-green-700'>{project.ProjectTitle}</h1>
+				<p className='info-bar w-full max-w-[80%] h-full bg-slate-950/10 rounded text-white/60 px-2 py-4 max-[500px]:h-max whitespace-pre-line text-pretty'>
 					{project.ProjectDescription}
 				</p>
+			</header>
+			<div className='grid grid-rows-[max-content_1fr] items-center w-full gap-2 max-[500px]:grid-cols-1 max-[500px]:grid-rows-2 p-2 overflow-hidden'>
 				<div className='w-full h-full border overflow-hidden'>
 					<ProjectSlider data={project} />
 				</div>

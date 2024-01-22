@@ -1,3 +1,4 @@
+import LastProject from '@/app/components/LastProject/LastProject';
 import { Section } from '../models/projects.model';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -19,54 +20,17 @@ const getSectionData = async (section: string) => {
 };
 
 const TrabajosPage = async ({ params }: any) => {
-	const sectionData = await getSectionData(params.section);
-	const LastProject = sectionData.data.find((project) => project.isLastProject);
-
+	const { section, data } = await getSectionData(params.section);
+	const lastProject = data.find((project) => project.isLastProject);
 	return (
-		<article className='flex flex-col w-full h-full min-h-screen animate-fade-down animate-duration-[2000ms]'>
-			<header className='w-full text-center p-5 bg-teal-800'>
-				<h1 className='text-2xl max-[400px]:text-xl text-white'>
-					Nuestros trabajos de {sectionData.section}
-				</h1>
-			</header>
-			{LastProject && (
-				<section className='flex flex-col items-end w-full p-3 bg-teal-800 text-white shadow-lg z-10'>
-					<span className='bg-blue-700 p-2 rounded-full text-sm text-white'>
-						Nuestro proyecto mas reciente
-					</span>
-					<h2 className='w-full p-5 pl-0 pb-0 text-left text-2xl flex items-center justify-center gap-2'>
-						{LastProject.ProjectTitle}
-						<button className='py-1 px-2 bg-blue-600 text-white rounded text-sm'>
-							<Link href={`${sectionData.section.split(' ').join('-')}/${LastProject._id}`}>
-								Ver Obra
-							</Link>
-						</button>
-					</h2>
-					<div className='flex flex-col w-full overflow-hidden gap-4'>
-						<p className='w-full p-2 text-justify text-slate-300'>
-							{LastProject.ProjectDescription}
-						</p>
-						<section className='flex w-full max-h-80 rounded overflow-hidden'>
-							{LastProject.ProjectImgs.map((image) => (
-								<picture className='flex w-full h-full relative' key={image.asset_id}>
-									<Image
-										alt={LastProject.ProjectTitle}
-										src={image.secure_url}
-										height={1080}
-										width={1920}
-									/>
-								</picture>
-							))}
-						</section>
-					</div>
-				</section>
-			)}
-			{sectionData.data.length <= 0 && (
+		<article className='flex flex-col w-full h-full animate-fade-left animate-duration-[500ms]'>
+			{lastProject && <LastProject project={lastProject} section={section} />}
+			{data.length <= 0 && (
 				<section className='flex w-full h-screen justify-center items-center text-2xl max-[400px]:text-xl text-white'>
 					Todavia no hay proyectos que mostrar
 				</section>
 			)}
-			{sectionData.data.length >= 1 && (
+			{data.length >= 2 && (
 				<section className='flex flex-col w-full h-full bg-teal-700 text-white p-3 '>
 					<header className='flex w-full justify-start'>
 						<h3 className='text-2xl p-2 pb-3'>Explora nuestros proyectos</h3>
@@ -83,7 +47,7 @@ const TrabajosPage = async ({ params }: any) => {
 							gap: '0.5rem'
 						}}>
 						{/* <ProjectSlider data={sectionData.data} /> */}
-						{sectionData.data
+						{data
 							.filter((project) => !project.isLastProject)
 							.map(({ _id, ProjectTitle, ProjectImgs, ProjectDescription }) => (
 								<div
@@ -104,7 +68,7 @@ const TrabajosPage = async ({ params }: any) => {
 											{ProjectDescription}
 										</p>
 										<button className='bg-blue-600 p-1 px-2 rounded text-white'>
-											<Link href={`${sectionData.section.split(' ').join('-')}/${_id}`}>
+											<Link href={`${section.split(' ').join('-')}/${_id}`}>
 												Ver Obra
 											</Link>
 										</button>

@@ -17,7 +17,7 @@ const ProjectSlider = ({ data }: Props) => {
 		<Swiper
 			modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
 			spaceBetween={50}
-			className='h-screen w-full border'
+			className='h-screen max-h-[600px] w-full border'
 			slidesPerView={1}
 			autoplay
 			navigation

@@ -9,12 +9,9 @@ export const metadata: Metadata = {
 };
 
 const getInfo = async () => {
-	const res = await fetch(
-		`${process.env.SERVER_URL}/presentacion/getInfoPresentacion`,
-		{
-			cache: 'no-cache'
-		}
-	);
+	const res = await fetch(`${process.env.SERVER_URL}/presentacion/getInfoPresentacion`, {
+		cache: 'no-cache'
+	});
 
 	const data = (await res.json()) as {
 		Presentacion: PresentacionInfo;
@@ -33,7 +30,7 @@ const NewsBanner = async () => {
 	const info = await getInfo();
 	return (
 		<section
-			className='w-full h-full overflow-x-hidden  animate-fade-down animate-duration-[2000ms]'
+			className='relative w-full h-full overflow-x-hidden  animate-fade-down animate-duration-[1500ms] text-white/90'
 			id='banner-news'>
 			<Slider data={info} />
 		</section>
