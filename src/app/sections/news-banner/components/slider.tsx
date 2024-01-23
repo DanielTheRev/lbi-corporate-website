@@ -62,6 +62,8 @@ const Slider = ({ data }: Props) => {
 										className='object-cover'
 										alt={Presentacion.description}
 										fill
+										priority
+										sizes='(max-width: 300px)'
 									/>
 								</picture>
 							))}
@@ -91,6 +93,7 @@ const Slider = ({ data }: Props) => {
 											className='object-cover'
 											alt={News.title}
 											fill
+											sizes='(max-width: 300px)'
 										/>
 									)}
 								</div>

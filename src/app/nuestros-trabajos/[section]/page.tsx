@@ -31,7 +31,7 @@ const TrabajosPage = async ({ params }: any) => {
 				</section>
 			)}
 			{data.length >= 2 && (
-				<section className='flex flex-col w-full h-full bg-teal-700 text-white p-3 '>
+				<section className='flex flex-col w-full h-full bg-neutral-700/20 text-white p-3 '>
 					<header className='flex w-full justify-start'>
 						<h3 className='text-2xl p-2 pb-3'>Explora nuestros proyectos</h3>
 					</header>
@@ -50,30 +50,27 @@ const TrabajosPage = async ({ params }: any) => {
 						{data
 							.filter((project) => !project.isLastProject)
 							.map(({ _id, ProjectTitle, ProjectImgs, ProjectDescription }) => (
-								<div
+								<Link
 									key={_id}
-									className='flex w-full h-full overflow-hidden bg-slate-200 text-black rounded'>
-									<picture className='flex relative w-3/12 overflow-hidden'>
-										<Image
-											src={ProjectImgs[0].secure_url}
-											className='object-cover'
-											alt=''
-											width={1920}
-											height={1080}
-										/>
-									</picture>
-									<div className='flex w-full flex-col items-center justify-between p-1 gap-2'>
-										<h5 className='pt-2 text-center'>{ProjectTitle}</h5>
-										<p className='overflow-hidden text-ellipsis text-sm p-1 max-h-20'>
+									href={`./${section.split(' ').join('-')}/${_id}`}
+									className='flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700'>
+									<Image
+										className='object-contain w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg'
+										src={ProjectImgs[0].secure_url}
+										alt=''
+										height={200}
+										width={200}
+										sizes='(max-width: 300px)'
+									/>
+									<div className='flex flex-col justify-between p-4 leading-normal'>
+										<h5 className='mb-2 font-bold tracking-tight text-gray-900 dark:text-white'>
+											{ProjectTitle}
+										</h5>
+										<p className='mb-3 font-normal text-gray-700 dark:text-gray-400 overflow-hidden text-ellipsis h-28'>
 											{ProjectDescription}
 										</p>
-										<button className='bg-blue-600 p-1 px-2 rounded text-white'>
-											<Link href={`${section.split(' ').join('-')}/${_id}`}>
-												Ver Obra
-											</Link>
-										</button>
 									</div>
-								</div>
+								</Link>
 							))}
 					</div>
 				</section>

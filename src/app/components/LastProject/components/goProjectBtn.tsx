@@ -1,6 +1,5 @@
 'use client';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 
 interface Props {
 	section: string;
@@ -8,10 +7,9 @@ interface Props {
 }
 
 const GoProjectBtn: React.FC<Props> = ({ section, projectID }) => {
-	const pathName = usePathname();
-	const projectSection = pathName.split('/')[2] || section;
+	const projectSection = section.split(' ').join('-');
 	return (
-		<Link href={`${projectSection}/${projectID}`} className='ml-auto btn-success'>
+		<Link href={`/nuestros-trabajos/${projectSection}/${projectID}`} scroll className='ml-auto btn-success'>
 			Ver proyecto
 		</Link>
 	);

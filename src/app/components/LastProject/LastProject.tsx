@@ -11,10 +11,6 @@ interface Props {
 const LastProject: React.FC<Props> = ({ project, section }) => {
 	return (
 		<article className='flex flex-col w-full h-screen max-h-[550px] max-w-[1200px] mx-auto items-start text-white gap-3 py-2'>
-			{/* <span className='bg-blue-700 py-0.5 px-2 rounded-full text-xs text-white'>{section}</span> */}
-			{/* <span className='bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-300'>
-				{section}
-			</span> */}
 			<span className='bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-blue-400 border border-blue-400'>
 				{section}
 			</span>
@@ -39,12 +35,6 @@ const LastProject: React.FC<Props> = ({ project, section }) => {
 					))}
 				</div>
 			</div>
-			{/* <a  className='ml-auto btn-success'>
-				Ver proyecto
-			</a> */}
-			{/* <Link href={`${section}/${project._id}`} className='ml-auto btn-success'>
-				Ver proyecto
-			</Link> */}
 			<GoProjectBtn projectID={project._id} section={section} />
 		</article>
 	);

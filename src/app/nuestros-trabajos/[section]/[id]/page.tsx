@@ -1,15 +1,16 @@
 import { Project } from '../../models/projects.model';
-import ProjectSlider from '../components/projectsSlider';
+import FancyProjectSlider from '../components/FancyProjectSlider';
 
 const getProjectData = async (data: { section: string; _id: string }) => {
 	const res = await fetch(`${process.env.SERVER_URL}/projects/getProject`, {
 		method: 'POST',
 		body: JSON.stringify(data),
-		mode: 'cors',
 		headers: {
 			'Content-Type': 'application/json'
 		},
-		cache: 'no-cache'
+		next: {
+			revalidate: 60000
+		}
 	});
 	const project = (await res.json()) as { status: string; project: Project };
 	return project;
@@ -22,17 +23,17 @@ const TrabajoPage = async ({ params: { id, section } }: Params) => {
 	const { project } = await getProjectData({ section: section.split('-').join(' '), _id: id });
 
 	return (
-		<section className='flex  w-full flex-grow h-full bg-slate-950/30 text-white p-2'>
-			<header className='flex flex-col justify-center h-full items-center w-full p-3'>
-				<h1 className='text-2xl text-green-700'>{project.ProjectTitle}</h1>
-				<p className='info-bar w-full max-w-[80%] h-full bg-slate-950/10 rounded text-white/60 px-2 py-4 max-[500px]:h-max whitespace-pre-line text-pretty'>
+		<section className='flex  w-full h-full min-h-[600px] bg-red-950/10 text-white p-2 overflow-hidden'>
+			<header className='flex flex-col justify-center h-full items-center w-full p-3 animate-fade-up animate-duration-[500ms]'>
+				<h1 className='text-4xl text-neutral-100 mb-4 text-balance text-center'>
+					{project.ProjectTitle}
+				</h1>
+				<p className='w-full max-w-[80%] h-full bg-slate-950/20 rounded text-gray-400 px-2 py-4 max-[500px]:h-max whitespace-pre-line text-pretty'>
 					{project.ProjectDescription}
 				</p>
 			</header>
-			<div className='grid grid-rows-[max-content_1fr] items-center w-full gap-2 max-[500px]:grid-cols-1 max-[500px]:grid-rows-2 p-2 overflow-hidden'>
-				<div className='w-full h-full border overflow-hidden'>
-					<ProjectSlider data={project} />
-				</div>
+			<div className='flex flex-col w-full h-full animate-fade-up animate-duration-[500ms]'>
+				<FancyProjectSlider data={project} />
 			</div>
 		</section>
 	);

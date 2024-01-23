@@ -1,16 +1,14 @@
 import { Metadata } from 'next';
-import Image from 'next/image';
 import Slider from './components/slider';
 import { News, PresentacionInfo } from '../models/presentacion.model';
 import { Project } from '@/app/nuestros-trabajos/models/projects.model';
 
-export const metadata: Metadata = {
-	title: 'Noticias'
-};
 
 const getInfo = async () => {
 	const res = await fetch(`${process.env.SERVER_URL}/presentacion/getInfoPresentacion`, {
-		cache: 'no-cache'
+		next: {
+			revalidate: 60000
+		}
 	});
 
 	const data = (await res.json()) as {
@@ -30,7 +28,7 @@ const NewsBanner = async () => {
 	const info = await getInfo();
 	return (
 		<section
-			className='relative w-full h-full overflow-x-hidden  animate-fade-down animate-duration-[1500ms] text-white/90'
+			className='relative w-full h-full overflow-x-hidden  animate-fade-down animate-duration-[500ms] text-white/90'
 			id='banner-news'>
 			<Slider data={info} />
 		</section>
