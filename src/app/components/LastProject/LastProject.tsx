@@ -38,9 +38,6 @@ const LastProject: React.FC<Props> = ({ project, section }) => {
 						</picture>
 					))}
 				</div>
-				{/* <div className='flex'> */}
-
-				{/* </div> */}
 			</div>
 		</article>
 	);

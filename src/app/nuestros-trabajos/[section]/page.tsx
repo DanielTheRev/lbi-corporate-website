@@ -30,14 +30,14 @@ const TrabajosPage = async ({ params }: any) => {
 			</section>
 		);
 	return (
-		<section className='flex flex-col md:flex-row w-full h-screen bg-red-950/10 text-white p-2 overflow-hidden'>
+		<section className='flex flex-col w-full h-auto bg-red-950/10 text-white  overflow-hidden'>
 			{lastProject && (
 				<div className='flex w-full h-full max-h-[600px]'>
 					<LastProject project={lastProject} section={section} />
 				</div>
 			)}
-			{/* {data.length >= 2 && (
-				<section className='flex flex-col w-full h-full bg-neutral-700/20 text-white p-3 '>
+			{data.length >= 2 && (
+				<div className='flex flex-col w-full h-full bg-neutral-700/20 text-white p-3'>
 					<header className='flex w-full justify-start'>
 						<h3 className='text-2xl p-2 pb-3'>Explora nuestros proyectos</h3>
 					</header>
@@ -78,8 +78,8 @@ const TrabajosPage = async ({ params }: any) => {
 								</Link>
 							))}
 					</div>
-				</section>
-			)} */}
+				</div>
+			)}
 		</section>
 	);
 };
