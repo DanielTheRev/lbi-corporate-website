@@ -1,5 +1,5 @@
 'use client';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 
 import { Fancybox } from '@fancyapps/ui';
@@ -17,8 +17,9 @@ interface Props {
 }
 
 const FancyProjectSlider: React.FC<Props> = ({ data }) => {
+	const container_ref = useRef<HTMLDivElement | null>(null);
 	useEffect(() => {
-		const container = document.getElementById('myCarousel');
+		const container = container_ref.current;
 		const options: any = {
 			AutoPlay: {
 				timeout: 1000
@@ -30,23 +31,29 @@ const FancyProjectSlider: React.FC<Props> = ({ data }) => {
 
 		new Carousel(container, options, { Thumbs, Autoplay });
 		Fancybox.bind(container, '[data-fancybox]');
+		return () => {
+			Fancybox.unbind(container);
+			Fancybox.close();
+		};
 	}, []);
 
 	return (
-		<div className='f-carousel' id='myCarousel'>
-			{data.ProjectImgs.map(({ secure_url }) => (
+		<div className='f-carousel' id='myCarousel' ref={container_ref}>
+			{data.ProjectImgs.map(({ secure_url, width, height }) => (
 				<a
 					href={secure_url}
 					key={secure_url}
-					className='f-carousel__slide'
+					className='relative f-carousel__slide'
 					data-thumb-src={secure_url}
 					data-fancybox='gallery'>
 					<Image
 						src={secure_url}
-						alt=''
-						className='aspect-video'
+						alt={`imagen del proyecto ${data.ProjectTitle}`}
+						width={Number(width)}
+						height={Number(height)}
+						priority
+						className='aspect-video object-cover'
 						data-lazy-src={secure_url}
-						fill
 						sizes={'(max-width: 300px)'}
 					/>
 				</a>

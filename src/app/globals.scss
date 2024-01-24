@@ -13,10 +13,11 @@ body {
 
 
 .f-carousel {
-	max-height: 600px !important;
+	// max-height: 600px !important;
+	@apply max-h-[600px];
 	.f-carousel__slide {
-		min-height: 500px !important;
-		max-height: 500px !important;
+		// min-height: 300px !important;
+		// max-height: 600px !important;
 		border-radius: 6px !important;
 		overflow: hidden !important;
 	}
