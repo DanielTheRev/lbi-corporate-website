@@ -30,9 +30,9 @@ const TrabajosPage = async ({ params }: any) => {
 			</section>
 		);
 	return (
-		<section className='flex flex-col md:flex-row w-full h-full bg-red-950/10 text-white p-2 overflow-hidden'>
+		<section className='flex flex-col md:flex-row w-full h-screen bg-red-950/10 text-white p-2 overflow-hidden'>
 			{lastProject && (
-				<div className='flex w-full h-screen max-h-[550px]'>
+				<div className='flex w-full h-full max-h-[600px]'>
 					<LastProject project={lastProject} section={section} />
 				</div>
 			)}
