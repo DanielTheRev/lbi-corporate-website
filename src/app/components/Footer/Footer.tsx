@@ -4,43 +4,12 @@ import { Logo } from '../Logo/Logo';
 
 const Footer = () => {
 	return (
-		// <footer id='footer' className='flex w-full items-center p-10'>
-		// 	<div className='flex w-full h-full justify-center items-center text-white'>
-		// 		<div className='w-80 h-40'>
-		// 			<Logo />
-		// 		</div>
-		// 	</div>
-		// 	<div className='flex flex-col items-center justify-center w-full h-full'>
-		// 		<h3 className='w-full text-center text-3xl text-white py-4 mb-3'>Contactanos</h3>
-		// 		<div className='flex w-full h-full justify-evenly items-center pb-2 text-white'>
-		// 			<div className='p-4 rounded flex flex-col gap-2'>
-		// 				<h5 className='text-2xl'>Atencion al cliente</h5>
-		// 				<span className='text-white/70'>• Lunes a viernes 4747-5373</span>
-		// 			</div>
-		// 			<div className='p-4 rounded flex flex-col gap-2'>
-		// 				<h5 className='text-2xl'>Nuestras Redes</h5>
-		// 				<div className='flex justify-center gap-4'>
-		// 					<Link href={'/'}>
-		// 						<Image src={'/facebook.png'} alt='facebook' width={35} height={35} />
-		// 					</Link>
-		// 					<Link href={'/'}>
-		// 						<Image src={'/whatsapp.png'} alt='whatsapp' width={35} height={35} />
-		// 					</Link>
-		// 					<Link href={'/'}>
-		// 						<Image src={'/instagram.png'} alt='instagram' width={35} height={35} />
-		// 					</Link>
-		// 				</div>
-		// 			</div>
-		// 		</div>
-		// 	</div>
-		// </footer>
-
 		<footer className='w-full bg-white dark:bg-gray-900'>
-			<div className='mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8'>
-				<div className='sm:flex sm:items-center sm:justify-between'>
+			<div className='flex justify-center gap-6 mx-auto w-full p-4 py-6'>
+				<div className='sm:flex sm:items-center sm:justify-between gap-5'>
 					<span className='text-sm text-gray-500 sm:text-center dark:text-gray-400'>
 						© 2024{' '}
-						<a href='https://flowbite.com/' className='hover:underline'>
+						<a href='/' className='hover:underline'>
 							LBI Construcciones
 						</a>
 						. Todos los derechos reservados.
@@ -54,7 +23,7 @@ const Footer = () => {
 								aria-hidden='true'
 								xmlns='http://www.w3.org/2000/svg'
 								fill='currentColor'
-								viewBox='0 0 8 19'>
+								viewBox='0 0 8 18'>
 								<path
 									fillRule='evenodd'
 									d='M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z'
