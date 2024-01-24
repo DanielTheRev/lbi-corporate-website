@@ -29,7 +29,7 @@ const Slider = ({ data }: Props) => {
 		<Swiper
 			modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
 			spaceBetween={50}
-			className='h-screen max-h-[550px] w-full bg-zinc-950/10'
+			className='h-screen max-h-[550px] w-full bg-zinc-950/10 overflow-hidden'
 			slidesPerView={1}
 			autoplay
 			pagination={{ clickable: true }}>
