@@ -24,7 +24,7 @@ const fetchSections = async () => {
 const NuestrosTrabajosLayout = async ({ children }: any) => {
 	const routes = await fetchSections();
 	return (
-		<section className='flex flex-col w-full min-h-full justify-center text-black scroll-smooth overflow-x-hidden'>
+		<section className='flex flex-col w-full min-h-full text-black scroll-smooth overflow-x-hidden'>
 			<NuestrosTrabajosNavbar Routes={routes} />
 			{children}
 		</section>

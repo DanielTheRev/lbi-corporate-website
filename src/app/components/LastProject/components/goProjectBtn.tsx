@@ -9,7 +9,7 @@ interface Props {
 const GoProjectBtn: React.FC<Props> = ({ section, projectID }) => {
 	const projectSection = section.split(' ').join('-');
 	return (
-		<Link href={`/nuestros-trabajos/${projectSection}/${projectID}`} scroll className='block  btn-success px-1 py-0.5'>
+		<Link href={`/nuestros-trabajos/${projectSection}/${projectID}`} scroll className='block whitespace-nowrap btn-success px-1 py-0.5'>
 			Ver proyecto
 		</Link>
 	);

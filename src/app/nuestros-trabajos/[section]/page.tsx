@@ -22,15 +22,21 @@ const getSectionData = async (section: string) => {
 const TrabajosPage = async ({ params }: any) => {
 	const { section, data } = await getSectionData(params.section);
 	const lastProject = data.find((project) => project.isLastProject);
+
+	if (data.length <= 0)
+		return (
+			<section className='flex w-full h-screen justify-center items-center text-2xl max-[400px]:text-xl text-white'>
+				Todavia no hay proyectos que mostrar
+			</section>
+		);
 	return (
-		<article className='flex flex-col w-full h-full animate-fade-left animate-duration-[500ms]'>
-			{lastProject && <LastProject project={lastProject} section={section} />}
-			{data.length <= 0 && (
-				<section className='flex w-full h-screen justify-center items-center text-2xl max-[400px]:text-xl text-white'>
-					Todavia no hay proyectos que mostrar
-				</section>
+		<section className='flex flex-col md:flex-row w-full h-full bg-red-950/10 text-white p-2 overflow-hidden'>
+			{lastProject && (
+				<div className='flex w-full h-screen max-h-[550px]'>
+					<LastProject project={lastProject} section={section} />
+				</div>
 			)}
-			{data.length >= 2 && (
+			{/* {data.length >= 2 && (
 				<section className='flex flex-col w-full h-full bg-neutral-700/20 text-white p-3 '>
 					<header className='flex w-full justify-start'>
 						<h3 className='text-2xl p-2 pb-3'>Explora nuestros proyectos</h3>
@@ -46,7 +52,6 @@ const TrabajosPage = async ({ params }: any) => {
 							padding: '0.4rem',
 							gap: '0.5rem'
 						}}>
-						{/* <ProjectSlider data={sectionData.data} /> */}
 						{data
 							.filter((project) => !project.isLastProject)
 							.map(({ _id, ProjectTitle, ProjectImgs, ProjectDescription }) => (
@@ -74,8 +79,8 @@ const TrabajosPage = async ({ params }: any) => {
 							))}
 					</div>
 				</section>
-			)}
-		</article>
+			)} */}
+		</section>
 	);
 };
 export default TrabajosPage;
