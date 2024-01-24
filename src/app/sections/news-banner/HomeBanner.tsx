@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import Slider from './components/slider';
+import Slider from './components/Slider';
 import { News, PresentacionInfo } from '../models/presentacion.model';
 import { Project } from '@/app/nuestros-trabajos/models/projects.model';
 
@@ -24,7 +24,7 @@ const getInfo = async () => {
 	return data;
 };
 
-const NewsBanner = async () => {
+const HomeBanner = async () => {
 	const info = await getInfo();
 	return (
 		<section
@@ -34,4 +34,4 @@ const NewsBanner = async () => {
 		</section>
 	);
 };
-export default NewsBanner;
+export default HomeBanner;

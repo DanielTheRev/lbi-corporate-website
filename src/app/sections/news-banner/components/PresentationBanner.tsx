@@ -1,0 +1,44 @@
+import Image from 'next/image';
+import { PresentacionInfo } from '../../models/presentacion.model';
+
+interface Props {
+	data: PresentacionInfo;
+}
+
+const PresentacionBanner: React.FC<Props> = ({ data }) => {
+	return (
+		<article className='w-full h-full flex'>
+			<div className='flex flex-col w-full max-w-[1200px] mx-auto h-full justify-center items-center gap-5 text-white'>
+				<div className='flex w-full justify-center items-center'>
+					<div className='flex flex-col w-full justify-center items-center'>
+						<header className='text-center mb-4'>
+							<h1 className='text-3xl'>LBI CONSTRUCCIONES </h1>
+						</header>
+
+						<p className=' text-white/70 text-pretty w-full md:max-w-[75%] text-center'>
+							{data.description}
+						</p>
+					</div>
+				</div>
+
+				<div className='flex w-full h-full max-h-[100px] md:max-h-[300px] gap-3'>
+					{data.images.map((image) => (
+						<picture
+							className='w-full h-full relative border-2 border-white rounded overflow-hidden'
+							key={image._id}>
+							<Image
+								src={image.imgRef.secure_url}
+								className='object-cover'
+								alt={data.description}
+								fill
+								priority
+								sizes='(max-width: 300px)'
+							/>
+						</picture>
+					))}
+				</div>
+			</div>
+		</article>
+	);
+};
+export default PresentacionBanner;
