@@ -1,4 +1,3 @@
-import { Metadata } from 'next';
 import Slider from './components/Slider';
 import { News, PresentacionInfo } from '../models/presentacion.model';
 import { Project } from '@/app/nuestros-trabajos/models/projects.model';

@@ -5,7 +5,6 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import Image from 'next/image';
 import { News, PresentacionInfo } from '../../models/presentacion.model';
 import { Project } from '@/app/nuestros-trabajos/models/projects.model';
 import LastProject from '@/app/components/LastProject/LastProject';
