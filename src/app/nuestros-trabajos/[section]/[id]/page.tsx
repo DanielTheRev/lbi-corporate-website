@@ -23,12 +23,12 @@ const TrabajoPage = async ({ params: { id, section } }: Params) => {
 	const { project } = await getProjectData({ section: section.split('-').join(' '), _id: id });
 
 	return (
-		<section className='flex  w-full h-full min-h-[600px] bg-red-950/10 text-white p-2 overflow-hidden'>
+		<section className='flex flex-col md:flex-row w-full h-full min-h-[600px] bg-red-950/10 text-white p-2 overflow-hidden'>
 			<header className='flex flex-col justify-center h-full items-center w-full p-3 animate-fade-up animate-duration-[500ms]'>
 				<h1 className='text-4xl text-neutral-100 mb-4 text-balance text-center'>
 					{project.ProjectTitle}
 				</h1>
-				<p className='w-full max-w-[80%] h-full bg-slate-950/20 rounded text-gray-400 px-2 py-4 max-[500px]:h-max whitespace-pre-line text-pretty'>
+				<p className='w-full md:max-w-[80%] h-full bg-slate-950/20 rounded text-gray-400 px-2 py-4 max-[500px]:h-max whitespace-pre-line text-pretty'>
 					{project.ProjectDescription}
 				</p>
 			</header>

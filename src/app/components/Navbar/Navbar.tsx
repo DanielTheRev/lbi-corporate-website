@@ -14,7 +14,7 @@ export default function Navbar() {
 	const pathName = usePathname();
 	return (
 		<header
-			className='flex w-full justify-center items-center px-2 py-1 max-[400px]:p-2 z-10 overflow-x-hidden'
+			className='flex w-full min-h-max justify-center items-center px-2 py-1 max-[400px]:p-2 z-10 overflow-x-hidden'
 			id='navbar'>
 			<nav className='flex w-4/5 max-[400px]:w-full p-2 max-[400px]:p-0 justify-between items-center'>
 				<Link href={'/'} className='relative object-cover w-40 text-neutral-300'>

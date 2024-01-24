@@ -44,6 +44,7 @@ const FancyProjectSlider: React.FC<Props> = ({ data }) => {
 					<Image
 						src={secure_url}
 						alt=''
+						className='aspect-video'
 						data-lazy-src={secure_url}
 						fill
 						sizes={'(max-width: 300px)'}
