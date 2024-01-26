@@ -5,13 +5,17 @@ import { usePathname } from 'next/navigation';
 import { Logo } from '../Logo/Logo';
 import { useState } from 'react';
 
-const Routes = [
+const HomeRoutes = [
 	{ label: 'Nuestros servicios', route: '/servicios' },
 	{ label: 'Nuestros trabajos', route: '/nuestros-trabajos' },
 	{ label: 'Contactanos', route: '#footer' }
 ];
 
-export default function Navbar() {
+interface Props {
+	Routes?: (typeof HomeRoutes)[0][];
+}
+
+const Navbar: React.FC<Props> = ({ Routes }) => {
 	const [showMenu, setShowMenu] = useState(false);
 	const pathName = usePathname();
 	return (
@@ -47,7 +51,10 @@ export default function Navbar() {
 							/>
 						</svg>
 					</button>
-					<div className={`${showMenu ? 'block' : 'hidden'} w-full md:block md:w-auto animate-fade-down animate-duration-[500ms]`}>
+					<div
+						className={`${
+							showMenu ? 'block' : 'hidden'
+						} w-full md:block md:w-auto animate-fade-down animate-duration-[500ms]`}>
 						<ul className='font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-transparent md:dark:bg-transparent dark:border-gray-700'>
 							<li>
 								<Link
@@ -60,7 +67,7 @@ export default function Navbar() {
 									Home
 								</Link>
 							</li>
-							{Routes.map(({ label, route }) => (
+							{(Routes || HomeRoutes).map(({ label, route }) => (
 								<li key={label}>
 									<a
 										href={route}
@@ -99,4 +106,6 @@ export default function Navbar() {
 			</nav>
 		</header>
 	);
-}
+};
+
+export default Navbar;

@@ -7,7 +7,7 @@ interface Props {
 
 const PresentacionBanner: React.FC<Props> = ({ data }) => {
 	return (
-		<article className='w-full h-full flex'>
+		<article className='w-full h-full flex my-3'>
 			<div className='flex flex-col w-full max-w-[1200px] mx-auto h-full justify-center items-center gap-5 text-white'>
 				<div className='flex w-full justify-center items-center'>
 					<div className='flex flex-col w-full justify-center items-center'>

@@ -14,9 +14,10 @@ const ServiceItem = ({ service }: Props) => {
 				width={1920}
 				height={1080}
 				alt=''
+				priority
 			/>
 			<div className='flex flex-col justify-between p-4 leading-normal'>
-				<h5 className='mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-emerald-700'>
+				<h5 className='mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-blue-700'>
 					{service.banner}
 				</h5>
 				<p className='mb-3 text-xs md:text-base font-semibold md:font-normal text-gray-700 dark:text-gray-400 whitespace-pre-wrap text-pretty'>

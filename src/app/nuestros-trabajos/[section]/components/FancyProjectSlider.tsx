@@ -3,13 +3,9 @@ import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 
 import { Fancybox } from '@fancyapps/ui';
-import '@fancyapps/ui/dist/fancybox/fancybox.css';
 import { Carousel } from '@fancyapps/ui/';
-import '@fancyapps/ui/dist/carousel/carousel.css';
 import { Autoplay } from '@fancyapps/ui/dist/carousel/carousel.autoplay.esm.js';
-import '@fancyapps/ui/dist/carousel/carousel.autoplay.css';
 import { Thumbs } from '@fancyapps/ui/dist/carousel/carousel.thumbs.esm.js';
-import '@fancyapps/ui/dist/carousel/carousel.thumbs.css';
 import { Project } from '../../models/projects.model';
 
 interface Props {

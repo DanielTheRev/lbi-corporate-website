@@ -1,10 +1,7 @@
 'use client';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
+
 import { News, PresentacionInfo } from '../../models/presentacion.model';
 import { Project } from '@/app/nuestros-trabajos/models/projects.model';
 import PresentacionBanner from './PresentationBanner';
@@ -41,15 +38,6 @@ const Slider = ({ data }: Props) => {
 			<SwiperSlide className='rounded-md px-3 w-full h-full'>
 				<PresentacionBanner data={Presentacion} />
 			</SwiperSlide>
-
-			{/* {last_projects.map(
-				(project) =>
-					project.last_project && (
-						<SwiperSlide key={project._id} className='w-full h-full'>
-							<LastProject project={project.last_project} section={project.section} />
-						</SwiperSlide>
-					)
-			)} */}
 		</Swiper>
 	);
 };
