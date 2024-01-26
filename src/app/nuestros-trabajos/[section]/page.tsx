@@ -13,7 +13,9 @@ const getSectionData = async (section: string) => {
 		headers: {
 			'Content-Type': 'application/json'
 		},
-		cache: 'no-cache'
+		next: {
+			revalidate: 3600
+		}
 	});
 	const data = await res.json();
 	return data as Section;

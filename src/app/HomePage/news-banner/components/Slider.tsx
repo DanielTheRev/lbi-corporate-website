@@ -20,7 +20,7 @@ interface Props {
 }
 
 const Slider = ({ data }: Props) => {
-	const { Presentacion, NewsList, last_projects } = data;
+	const { Presentacion, NewsList } = data;
 	return (
 		<Swiper
 			modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}

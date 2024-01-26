@@ -19,7 +19,9 @@ const Navbar: React.FC<Props> = ({ Routes }) => {
 	const [showMenu, setShowMenu] = useState(false);
 	const pathName = usePathname();
 	return (
-		<header className='flex w-full max-w-[1200px] mx-auto justify-center items-center overflow-x-hidden' id='navbar'>
+		<header
+			className='flex w-full max-w-[1200px] mx-auto justify-center items-center overflow-x-hidden'
+			id='navbar'>
 			<nav className='w-full'>
 				<div className='flex flex-wrap items-center justify-between mx-auto p-2 md:p-4'>
 					<Link
@@ -69,14 +71,14 @@ const Navbar: React.FC<Props> = ({ Routes }) => {
 							</li>
 							{(Routes || HomeRoutes).map(({ label, route }) => (
 								<li key={label}>
-									<a
+									<Link
 										href={route}
 										className={`block ${
 											pathName.startsWith(route) &&
 											'bg-blue-700 md:bg-transparent md:dark:text-blue-500'
 										} py-2 px-3 text-gray-900 rounded hover:bg-gray-100  md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent`}>
 										{label}
-									</a>
+									</Link>
 								</li>
 							))}
 							{/* <li>

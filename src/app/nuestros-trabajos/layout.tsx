@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import NuestrosTrabajosNavbar from './components/NuestrosTrabajosNavbar';
 import Navbar from '../components/Navbar/Navbar';
 
 export const metadata: Metadata = {

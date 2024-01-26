@@ -9,7 +9,7 @@ const ServiceItem = ({ service }: Props) => {
 	return (
 		<article className='flex flex-col md:flex-row md:even:flex-row-reverse max-w-[1200px] mx-auto p-1 items-center bg-white border border-gray-200 rounded-lg shadow  hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800/50 dark:hover:bg-gray-700/50'>
 			<Image
-				className='object-cover  rounded-t-lg w-full max-w-[500px] md:rounded-none md:rounded-s-lg'
+				className='object-cover w-full max-w-[500px] rounded-md'
 				src={service.images[0].imgRef.secure_url}
 				width={1920}
 				height={1080}
