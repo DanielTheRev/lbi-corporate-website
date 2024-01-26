@@ -1,5 +1,5 @@
 import { Project } from '../nuestros-trabajos/models/projects.model';
-import { PresentacionInfo, News } from '../sections/models/presentacion.model';
+import { PresentacionInfo, News } from '../HomePage/models/presentacion.model';
 
 export interface BannersResponse {
 	Presentacion: PresentacionInfo;
