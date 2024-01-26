@@ -8,7 +8,7 @@ import { useState } from 'react';
 const HomeRoutes = [
 	{ label: 'Nuestros servicios', route: '/servicios' },
 	{ label: 'Nuestros trabajos', route: '/nuestros-trabajos' },
-	{ label: 'Contactanos', route: '#footer' }
+	{ label: 'Contactanos', route: '/contacto' }
 ];
 
 interface Props {
@@ -19,7 +19,7 @@ const Navbar: React.FC<Props> = ({ Routes }) => {
 	const [showMenu, setShowMenu] = useState(false);
 	const pathName = usePathname();
 	return (
-		<header className='flex w-full justify-center items-center overflow-x-hidden' id='navbar'>
+		<header className='flex w-full max-w-[1200px] mx-auto justify-center items-center overflow-x-hidden' id='navbar'>
 			<nav className='w-full'>
 				<div className='flex flex-wrap items-center justify-between mx-auto p-2 md:p-4'>
 					<Link

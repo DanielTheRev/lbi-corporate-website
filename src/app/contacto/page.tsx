@@ -1,109 +1,79 @@
 import Link from 'next/link';
+import Navbar from '../components/Navbar/Navbar';
+import { Logo } from '../components/Logo/Logo';
 
 const ContactoPage = () => {
 	return (
-		<section className='flex  w-full min-h-full p-4 gap-4'>
-			<div className='flex flex-col w-full h-full gap-5'>
-				<header className='flex flex-col w-full justify-center items-center gap-1'>
-					<h1 className='text-white text-2xl'>
-						Ponte en contacto con nosotros mediante redes sociales
-					</h1>
-					<h3 className='text-white text-2xl'>Te responderemos a la brevedad</h3>
-				</header>
-				<div className='flex mt-4 sm:justify-center sm:mt-0'>
-					<Link href='#' className='text-gray-500 hover:text-gray-900 dark:hover:text-white'>
-						<svg
-							className='size-6'
-							aria-hidden='true'
-							xmlns='http://www.w3.org/2000/svg'
-							fill='currentColor'
-							viewBox='0 0 8 18'>
-							<path
-								fillRule='evenodd'
-								d='M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z'
-								clipRule='evenodd'
-							/>
-						</svg>
-						<span className='sr-only'>Facebook page</span>
-					</Link>
-
-					<Link
-						href='#'
-						className='text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5'>
-						<svg
-							xmlns='http://www.w3.org/2000/svg'
-							className='size-6'
-							fill='currentColor'
-							viewBox='0 0 24 24'>
-							<path
-								fillRule='evenodd'
-								clipRule='evenodd'
-								d='M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3'
-							/>
-						</svg>
-						<span className='sr-only'>Página de Instagram</span>
-					</Link>
-					<Link
-						href='#'
-						className='text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5'>
-						<svg
-							xmlns='http://www.w3.org/2000/svg'
-							className='size-6'
-							fill='currentColor'
-							viewBox='0 0 24 24'>
-							<path
-								fillRule='evenodd'
-								clipRule='evenodd'
-								d='M12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23c-1.48 0-2.93-.39-4.19-1.15l-.3-.17l-3.12.82l.83-3.04l-.2-.32a8.188 8.188 0 0 1-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24M8.53 7.33c-.16 0-.43.06-.66.31c-.22.25-.87.86-.87 2.07c0 1.22.89 2.39 1 2.56c.14.17 1.76 2.67 4.25 3.73c.59.27 1.05.42 1.41.53c.59.19 1.13.16 1.56.1c.48-.07 1.46-.6 1.67-1.18c.21-.58.21-1.07.15-1.18c-.07-.1-.23-.16-.48-.27c-.25-.14-1.47-.74-1.69-.82c-.23-.08-.37-.12-.56.12c-.16.25-.64.81-.78.97c-.15.17-.29.19-.53.07c-.26-.13-1.06-.39-2-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.12-.24-.01-.39.11-.5c.11-.11.27-.29.37-.44c.13-.14.17-.25.25-.41c.08-.17.04-.31-.02-.43c-.06-.11-.56-1.35-.77-1.84c-.2-.48-.4-.42-.56-.43c-.14 0-.3-.01-.47-.01'
-							/>
-						</svg>
-						<span className='sr-only'>Dribbble account</span>
-					</Link>
+		<>
+			<Navbar />
+			<section className='flex flex-col w-full h-full flex-grow justify-center items-center p-4 gap-4'>
+				<div className='flex w-full max-w-[300px] text-white justify-center items-center'>
+					<Logo />
 				</div>
-			</div>
-
-			<div className='flex flex-col w-full h-full'>
-				<header>
-					<h1 className='text-white text-2xl text-center'>
-						Tambien podes rellenar este formulario y nos pondremos en contacto
+				<header className='mb-3 text-center'>
+					<h1 className='text-3xl text-center text-blue-200 text-balance'>
+						Envíanos tu consulta
 					</h1>
+					<span className='text-lg font-semibold text-gray-400'>
+						responderemos a la brevedad
+					</span>
 				</header>
-				<form className='flex flex-col w-full h-full gap-3'>
-					<div className='flex w-full gap-2 py-2'>
-						<input
-							type='text'
-							className='w-full rounded p-1'
-							name='name'
-							placeholder='Nombre'
-						/>
-						<input
-							type='text'
-							className='w-full rounded p-1'
-							name='last-name'
-							placeholder='Apellido'
-						/>
+				<div className='flex w-full items-center justify-center gap-5'>
+					<div className='flex flex-col w-full max-w-[350px] h-full bg-slate-950/50 p-4 rounded-md'>
+						<form className='flex flex-col w-full h-full'>
+							<div className='mb-3'>
+								<label
+									htmlFor='nombre'
+									className='block mb-2 text-sm font-medium text-gray-900 dark:text-white'>
+									Nombre
+								</label>
+								<input
+									type='text'
+									id='nombre'
+									className='block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
+								/>
+							</div>
+							<div className='mb-3'>
+								<label
+									htmlFor='apellido'
+									className='block mb-2 text-sm font-medium text-gray-900 dark:text-white'>
+									Apellido
+								</label>
+								<input
+									type='text'
+									id='apellido'
+									className='block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
+								/>
+							</div>
+							<div className='mb-3'>
+								<label
+									htmlFor='correo'
+									className='block mb-2 text-sm font-medium text-gray-900 dark:text-white'>
+									Correo
+								</label>
+								<input
+									type='email'
+									id='correo'
+									className='block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
+								/>
+							</div>
+							<div className='mb3'>
+								<label
+									htmlFor='message'
+									className='block mb-2 text-sm font-medium text-gray-900 dark:text-white'>
+									Tu mensaje:
+								</label>
+								<textarea
+									id='message'
+									rows={4}
+									className='block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
+									placeholder='Escriba su consulta'></textarea>
+							</div>
+						</form>
 					</div>
-					<input
-						type='email'
-						className='w-full rounded p-1'
-						name='email'
-						placeholder='Email'
-					/>
-					<input
-						type='tel'
-						className='w-full rounded p-1'
-						name='telefono'
-						placeholder='Telefono'
-					/>
-					<textarea
-						className='w-full rounded p-1'
-						name='query'
-						cols={10}
-						rows={10}
-						placeholder='Ingrese su consulta'></textarea>
-				</form>
-			</div>
-		</section>
+				</div>
+			</section>
+		</>
 	);
 };
 export default ContactoPage;

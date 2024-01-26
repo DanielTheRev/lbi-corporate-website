@@ -17,9 +17,6 @@ const HomeBanner = async () => {
 						<LastProject key={last_project?._id} project={last_project} section={section} />
 					)
 			)}
-			{/* <article className='flex flex-col w-full h-auto max-w-[1200px] mx-auto'>
-				<div className='flex flex-col w-full gap-6'></div>
-			</article> */}
 		</section>
 	);
 };
