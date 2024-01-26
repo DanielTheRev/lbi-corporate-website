@@ -21,7 +21,7 @@ const PresentacionBanner: React.FC<Props> = ({ data }) => {
 					</div>
 				</div>
 
-				<div className='flex w-full h-full max-h-[100px] md:max-h-[300px] gap-3'>
+				<div className='flex w-full h-screen max-h-[100px] md:max-h-[250px] gap-3'>
 					{data.images.map((image) => (
 						<picture
 							className='w-full h-full relative border-2 border-white rounded overflow-hidden'

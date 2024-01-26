@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { HomeBannerType } from '../../sections/models/service.model';
+import { HomeBannerType } from '../../HomePage/models/service.model';
 
 interface Props {
 	service: HomeBannerType;
@@ -7,7 +7,7 @@ interface Props {
 
 const ServiceItem = ({ service }: Props) => {
 	return (
-		<article className='flex flex-col md:flex-row md:even:flex-row-reverse max-w-[1200px] mx-auto p-1 items-center bg-white border border-gray-200 rounded-lg shadow  hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700'>
+		<article className='flex flex-col md:flex-row md:even:flex-row-reverse max-w-[1200px] mx-auto p-1 items-center bg-white border border-gray-200 rounded-lg shadow  hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800/50 dark:hover:bg-gray-700/50'>
 			<Image
 				className='object-cover  rounded-t-lg w-full md:w-2/4 md:h-auto  md:rounded-none md:rounded-s-lg'
 				src={service.images[0].imgRef.secure_url}
@@ -16,7 +16,7 @@ const ServiceItem = ({ service }: Props) => {
 				alt=''
 			/>
 			<div className='flex flex-col justify-between p-4 leading-normal'>
-				<h5 className='mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white'>
+				<h5 className='mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-emerald-700'>
 					{service.banner}
 				</h5>
 				<p className='mb-3 text-xs md:text-base font-semibold md:font-normal text-gray-700 dark:text-gray-400 whitespace-pre-wrap text-pretty'>

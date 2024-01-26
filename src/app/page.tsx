@@ -1,9 +1,5 @@
-import HomeBanner from './sections/news-banner/HomeBanner';
+import HomeBanner from './HomePage/news-banner/HomeBanner';
 
-export default function Home() {
-	return (
-		<div className='flex flex-col w-full h-full'>
-			<HomeBanner />
-		</div>
-	);
+export default async function Home() {
+	return <HomeBanner />;
 }

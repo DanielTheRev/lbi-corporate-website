@@ -10,7 +10,7 @@ interface Props {
 
 const LastProject: React.FC<Props> = ({ project, section }) => {
 	return (
-		<article className='flex flex-col w-full h-full max-w-[1200px] mx-auto items-start text-white gap-3 py-2 p-1'>
+		<article className='flex flex-col w-full h-full max-w-[1200px] mx-auto mt-4 bg-slate-800/20 px-4 py-5 gap-3 rounded-lg items-start text-white'>
 			<span className='bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-blue-400 border border-blue-400'>
 				{section}
 			</span>
