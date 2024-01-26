@@ -19,7 +19,7 @@ const LastProject: React.FC<Props> = ({ project, section }) => {
 				<GoProjectBtn projectID={project._id} section={section} />
 			</header>
 			<div className='flex flex-col w-full overflow-hidden gap-4'>
-				<p className='w-full text-pretty text-gray-400 whitespace-pre-line overflow-hidden overflow-ellipsis'>
+				<p className='w-full  overflow-hidden text-gray-400 whitespace-pre-line text-nowrap text-ellipsis'>
 					{project.ProjectDescription}
 				</p>
 				<div className='flex w-full h-screen max-h-[100px] md:max-h-72 rounded gap-1 overflow-hidden'>
@@ -27,8 +27,6 @@ const LastProject: React.FC<Props> = ({ project, section }) => {
 						<picture className='w-full h-full relative' key={asset_id}>
 							<Image
 								className='object-cover'
-								// width={Number(width)}
-								// height={Number(height)}
 								alt={`imagen del proyecto ${project.ProjectTitle}`}
 								src={secure_url}
 								priority
