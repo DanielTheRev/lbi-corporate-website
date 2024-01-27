@@ -1,7 +1,6 @@
 import './globals.scss';
 import type { Metadata } from 'next';
 import { Noto_Sans } from 'next/font/google';
-import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 
 const Noto_S = Noto_Sans({
@@ -22,11 +21,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 			<head>
 				<link rel='icon' href='/favicon.ico' sizes='any' />
 			</head>
-			<body className={'relative flex flex-col min-h-screen justify-between overflow-x-hidden ' + Noto_S.className}>
+			<body
+				className={
+					'relative flex flex-col min-h-screen justify-between overflow-x-hidden ' +
+					Noto_S.className
+				}>
 				<div className='absolute top-0 z-[-2] h-full w-full bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]'></div>
 
-				{/* <Navbar /> */}
-				<main className='flex flex-col w-full flex-grow h-full justify-between'>{children}</main>
+				<main className='flex flex-col w-full flex-grow justify-between'>{children}</main>
 				<Footer />
 			</body>
 		</html>

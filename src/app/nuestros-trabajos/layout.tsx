@@ -23,8 +23,7 @@ const fetchSections = async (): Promise<{ label: string; route: string }[]> => {
 const NuestrosTrabajosLayout = async ({ children }: any) => {
 	const routes = await fetchSections();
 	return (
-		<section className='flex flex-col w-full min-h-full text-black scroll-smooth overflow-x-hidden'>
-			{/* <NuestrosTrabajosNavbar Routes={routes} /> */}
+		<section className='flex flex-col w-full text-black scroll-smooth overflow-x-hidden'>
 			<Navbar Routes={routes} />
 			{children}
 		</section>

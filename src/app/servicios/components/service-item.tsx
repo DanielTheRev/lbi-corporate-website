@@ -7,7 +7,7 @@ interface Props {
 
 const ServiceItem = ({ service }: Props) => {
 	return (
-		<article className='flex flex-col md:flex-row md:even:flex-row-reverse max-w-[1200px] mx-auto p-1 items-center bg-white border border-gray-200 rounded-lg shadow  hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800/50 dark:hover:bg-gray-700/50'>
+		<article className='flex flex-col md:flex-row md:even:flex-row-reverse max-w-[1200px] mx-auto p-1 items-center bg-white border border-gray-200 rounded-lg shadow  hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800/50 dark:hover:bg-gray-700/50 animate-fade-left animate-duration-[500ms]'>
 			<Image
 				className='object-cover w-full max-w-[500px] rounded-md'
 				src={service.images[0].imgRef.secure_url}

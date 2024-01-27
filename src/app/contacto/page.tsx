@@ -1,22 +1,15 @@
-import Link from 'next/link';
 import Navbar from '../components/Navbar/Navbar';
-import { Logo } from '../components/Logo/Logo';
 
 const ContactoPage = () => {
 	return (
 		<>
 			<Navbar />
-			<section className='flex flex-col w-full h-full flex-grow justify-center items-center p-4 gap-4'>
-				<div className='flex w-full max-w-[300px] text-white justify-center items-center'>
-					<Logo />
-				</div>
-				<header className='mb-3 text-center'>
-					<h1 className='text-3xl text-center text-blue-200 text-balance'>
-						Envíanos tu consulta
-					</h1>
-					<span className='text-lg font-semibold text-gray-400'>
-						responderemos a la brevedad
-					</span>
+			<section className='flex flex-col md:flex-row w-full h-full max-w-[1200px] mx-auto flex-grow justify-center items-center p-4 gap-4 animate-fade-down animate-duration-[500ms]'>
+				<header className='block w-full text-start'>
+					<h1 className='block text-2xl md:text-4xl text-white/90 font-semibold mb-3'>Contacto</h1>
+					<h2 className='block text-lg  text-balance text-blue-600/70 font-semibold'>
+						Envíanos tu consulta responderemos a la brevedad.
+					</h2>
 				</header>
 				<div className='flex w-full items-center justify-center gap-5'>
 					<div className='flex flex-col w-full max-w-[350px] h-full bg-slate-950/50 p-4 rounded-md'>
