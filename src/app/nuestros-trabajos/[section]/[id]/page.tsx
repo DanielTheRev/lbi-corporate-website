@@ -9,7 +9,7 @@ const getProjectData = async (data: { section: string; _id: string }) => {
 			'Content-Type': 'application/json'
 		},
 		next: {
-			revalidate: 60000
+			revalidate: 3600
 		}
 	});
 	const project = (await res.json()) as { status: string; project: Project };

@@ -10,16 +10,16 @@ const NewsBanner: React.FC<Props> = ({ data: News }) => {
 		<article className='flex flex-col justify-center w-full max-w-[1200px] mx-auto h-full my-2 gap-3'>
 			<div className='flex flex-col w-full gap-3'>
 				<header>
-					<h3 className='text-xl text-white/70 text-pretty md:text-3xl'>{News.title}</h3>
+					<h3 className='text-xl text-blue-600 text-pretty md:text-3xl'>{News.title}</h3>
 				</header>
-				<p className='w-full h-full text-sm md:text-md text-pretty text-white/70'>
+				<p className='w-full h-full text-sm md:text-lg text-pretty text-white/90'>
 					{News.description}
 				</p>
 			</div>
 
-			<div className='flex w-full h-screen max-h-[100px] md:max-h-80 overflow-hidden shadow-lg rounded border'>
+			<div className='flex w-full h-screen max-h-[100px] md:max-h-[250px] overflow-hidden shadow-lg gap-1 rounded '>
 				{News.images.map((image) => (
-					<div className='w-full h-full relative overflow-hidden' key={image._id}>
+					<div className='w-full h-full relative rounded-md overflow-hidden' key={image._id}>
 						{image.imgRef && (
 							<Image
 								src={image.imgRef.secure_url}
