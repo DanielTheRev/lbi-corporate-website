@@ -6,7 +6,7 @@ const ContactoPage = () => {
 			<Navbar />
 			<section className='flex flex-col md:flex-row w-full h-full max-w-[1200px] mx-auto flex-grow justify-center items-center p-4 gap-4 animate-fade-down animate-duration-[500ms]'>
 				<header className='block w-full text-start'>
-					<h1 className='block text-2xl md:text-4xl text-white/90 font-semibold mb-3'>Contacto</h1>
+					<h1 className='block text-2xl md:text-4xl text-white/90 font-semibold mb-3'>Contáctenos</h1>
 					<h2 className='block text-lg  text-balance text-blue-600/70 font-semibold'>
 						Envíanos tu consulta responderemos a la brevedad.
 					</h2>

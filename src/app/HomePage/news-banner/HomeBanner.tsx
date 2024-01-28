@@ -9,7 +9,7 @@ const HomeBanner = async () => {
 			<Slider data={info} />
 
 			<header className='flex w-full max-w-[1200px] mx-auto py-3 justify-start items-center'>
-				<h2 className='text-4xl text-balance text-blue-600'>Nuestras últimas obras</h2>
+				<h2 className='text-2xl px-3 md:text-4xl text-balance text-blue-600'>Últimas obras</h2>
 			</header>
 			{info.last_projects.map(
 				({ last_project, section }) =>

@@ -8,7 +8,7 @@ import { useState } from 'react';
 const HomeRoutes = [
 	{ label: 'Nuestros servicios', route: '/servicios' },
 	{ label: 'Nuestros trabajos', route: '/nuestros-trabajos' },
-	{ label: 'Contactanos', route: '/contacto' }
+	{ label: 'Contacto', route: '/contacto' }
 ];
 
 interface Props {

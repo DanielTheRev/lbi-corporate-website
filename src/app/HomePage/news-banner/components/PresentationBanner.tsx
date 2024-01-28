@@ -15,7 +15,7 @@ const PresentacionBanner: React.FC<Props> = ({ data }) => {
 							<h1 className='text-3xl'>LBI CONSTRUCCIONES </h1>
 						</header>
 
-						<p className=' text-white/70 text-pretty w-full md:max-w-[75%] text-center'>
+						<p className='w-full md:max-w-[75%] text-xs md:text-base text-white/70 text-pretty text-center whitespace-pre-line'>
 							{data.description}
 						</p>
 					</div>

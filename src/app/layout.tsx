@@ -1,18 +1,19 @@
 import './globals.scss';
 import type { Metadata } from 'next';
-import { Noto_Sans } from 'next/font/google';
+import { Manrope } from 'next/font/google';
 import Footer from './components/Footer/Footer';
 
-const Noto_S = Noto_Sans({
+const _Manrope = Manrope({
 	subsets: ['latin'],
 	variable: '--font-Roboto',
-	weight: ['400'],
+	weight: ['400', '500', '600'],
 	preload: true
 });
 
 export const metadata: Metadata = {
 	title: 'LBI Construcciones',
-	description: ''
+	description:
+		'Somos una empresa que nace como consecuencia de 40 años de experiencia en proyectos vinculados a las construcciones civiles metálicas. Con base estratégica en la localidad de Berazategui, importante punto de acceso a rutas nacionales y autopistas, ofrecemos cobertura en todo el territorio de la República Argentina.'
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -24,7 +25,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 			<body
 				className={
 					'relative flex flex-col min-h-screen justify-between overflow-x-hidden ' +
-					Noto_S.className
+					_Manrope.className
 				}>
 				<div className='absolute top-0 z-[-2] h-full w-full bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]'></div>
 
