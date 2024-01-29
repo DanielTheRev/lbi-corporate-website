@@ -25,10 +25,10 @@ const TrabajoPage = async ({ params: { id, section } }: Params) => {
 	return (
 		<section className='flex flex-col md:flex-row w-full h-full min-h-[600px] bg-red-950/10 text-white p-2 mt-3 overflow-hidden'>
 			<header className='flex flex-col justify-center h-full items-center w-full md:p-3 animate-fade-up animate-duration-[500ms]'>
-				<h1 className='text-xl md:text-4xl text-blue-700 mb-4 text-balance text-center'>
+				<h1 className='text-xl md:text-4xl text-blue-700 mb-2 text-balance text-center'>
 					{project.ProjectTitle}
 				</h1>
-				<p className='w-full md:max-w-[90%] h-full bg-slate-950/10 rounded text-sm md:text-base text-gray-300 whitespace-pre-line text-pretty p-1 md:px-2 md:py-4'>
+				<p className='w-full md:max-w-[90%] h-full bg-slate-950/10 rounded text-xs md:text-base text-gray-300 whitespace-pre-line text-pretty p-1 mb-3 md:px-2 md:py-4'>
 					{project.ProjectDescription}
 				</p>
 			</header>
