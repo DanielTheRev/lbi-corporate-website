@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { HomeBannerType } from '../../HomePage/models/service.model';
+import Link from 'next/link';
 
 interface Props {
 	service: HomeBannerType;
@@ -25,16 +26,21 @@ const ServiceItem = ({ service }: Props) => {
 				</p>
 
 				<div>
-					<button
+					<Link
+						href={'/nuestros-trabajos/' + service.banner.split(' ').join('-')}
+						replace
 						type='button'
 						className='text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-3 py-2 text-center me-2 mb-2'>
 						Mirá nuestos trabajos
-					</button>
-					<button className='relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800'>
+					</Link>
+					<Link
+						href={'/contacto'}
+						replace
+						className='relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800'>
 						<span className='relative px-3 py-2 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0'>
 							Pedi tu presupuesto
 						</span>
-					</button>
+					</Link>
 				</div>
 			</div>
 		</article>
