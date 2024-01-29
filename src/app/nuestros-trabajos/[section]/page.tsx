@@ -43,24 +43,14 @@ const TrabajosPage = async ({ params }: any) => {
 					<header className='flex w-full justify-start'>
 						<h3 className='text-2xl p-2 pb-3'>Explora nuestros proyectos</h3>
 					</header>
-					<div
-						className='w-full h-full max-[400px]:grid-cols-1'
-						style={{
-							display: 'grid',
-							width: '100%',
-							height: '100%',
-							gridTemplateColumns: ' repeat(auto-fill,minmax(26rem,1fr)',
-							gridAutoRows: 'auto',
-							padding: '0.4rem',
-							gap: '0.5rem'
-						}}>
+					<div className='w-full h-full flex flex-wrap gap-2'>
 						{data
 							.filter((project) => !project.isLastProject)
 							.map(({ _id, ProjectTitle, ProjectImgs, ProjectDescription }) => (
 								<Link
 									href={`./${section.split(' ').join('-')}/${_id}`}
 									key={_id}
-									className='flex flex-col  items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700'>
+									className='flex flex-col  items-center bg-white border border-gray-200 rounded-lg shadow w-full md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700'>
 									<Image
 										className='object-cover w-full rounded-t-lg h-44 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg'
 										src={ProjectImgs[0].secure_url}
@@ -68,11 +58,11 @@ const TrabajosPage = async ({ params }: any) => {
 										height={Number(ProjectImgs[0].height)}
 										alt=''
 									/>
-									<div className='flex flex-col justify-between p-4 leading-normal overflow-hidden'>
+									<div className='flex flex-col w-full p-4 overflow-hidden'>
 										<h5 className='mb-2 text-lg font-bold tracking-tight text-gray-900 dark:text-white'>
 											{ProjectTitle}
 										</h5>
-										<p className='mb-3 max-h-[100px] font-normal text-gray-700 dark:text-gray-400 overflow-hidden whitespace-pre-line text-nowrap text-ellipsis'>
+										<p className='mb-3 w-full h-full max-h-40 font-normal text-gray-700 dark:text-gray-400 truncate'>
 											{ProjectDescription}
 										</p>
 									</div>
