@@ -23,7 +23,7 @@ const TrabajoPage = async ({ params: { id, section } }: Params) => {
 	const { project } = await getProjectData({ section: section.split('-').join(' '), _id: id });
 
 	return (
-		<section className='flex flex-col md:flex-row w-full h-full bg-red-950/10 text-white p-2 mt-3 overflow-hidden'>
+		<section className='flex flex-col md:flex-row w-full h-full bg-red-950/10 text-white p-2 mt-10 overflow-hidden'>
 			<header className='flex flex-col h-full justify-center items-center w-full md:p-3 animate-fade-up animate-duration-[500ms]'>
 				<h1 className='text-xl md:text-4xl text-blue-700 mb-2 text-balance text-center'>
 					{project.ProjectTitle}
