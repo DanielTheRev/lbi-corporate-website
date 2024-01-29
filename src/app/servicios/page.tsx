@@ -30,7 +30,7 @@ const NuestrosServicios = async () => {
 						Nuestros servicios de construcción
 					</h1>
 				</header>
-				{service_data.toReversed().map((service) => (
+				{service_data.reverse().map((service) => (
 					<ServiceItem key={service._id} service={service} />
 				))}
 			</section>
