@@ -22,11 +22,8 @@ body {
 }
 
 .f-carousel {
-	// max-height: 600px !important;
 	@apply max-h-[600px];
 	.f-carousel__slide {
-		// min-height: 300px !important;
-		// max-height: 600px !important;
 		border-radius: 6px !important;
 		overflow: hidden !important;
 	}
