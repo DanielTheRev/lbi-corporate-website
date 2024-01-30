@@ -19,7 +19,13 @@ const LastProject: React.FC<Props> = ({ project, section }) => {
 				<GoProjectBtn projectID={project._id} section={section} />
 			</header>
 			<div className='flex flex-col w-full overflow-hidden gap-4'>
-				<p className='w-full overflow-hidden text-xs md:text-base text-gray-400 whitespace-pre-line text-nowrap text-ellipsis'>
+				<p
+					style={{
+						display: '-webkit-box',
+						WebkitBoxOrient: 'vertical',
+						WebkitLineClamp: 3
+					}}
+					className='w-full text-xs md:text-base text-gray-400 whitespace-pre-line overflow-hidden'>
 					{project.ProjectDescription}
 				</p>
 				<div className='flex w-full h-screen max-h-[100px] md:max-h-72 rounded gap-1 overflow-hidden'>

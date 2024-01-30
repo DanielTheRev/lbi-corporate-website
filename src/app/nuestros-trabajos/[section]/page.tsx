@@ -1,7 +1,6 @@
 import LastProject from '@/app/components/LastProject/LastProject';
 import { Section } from '../models/projects.model';
-import Image from 'next/image';
-import Link from 'next/link';
+import ProjectCard from './components/ProjectCard/ProjectCard';
 
 const getSectionData = async (section: string) => {
 	const body = {
@@ -41,32 +40,13 @@ const TrabajosPage = async ({ params }: any) => {
 			{data.length >= 2 && (
 				<div className='flex flex-col w-full h-full text-white p-3'>
 					<header className='flex w-full justify-start'>
-						<h3 className='text-2xl p-2 pb-3'>Explora nuestros proyectos</h3>
+						<h3 className='text-xl md:text-2xl p-2 pb-3'>Más obras</h3>
 					</header>
 					<div className='w-full h-full flex flex-wrap gap-2'>
 						{data
 							.filter((project) => !project.isLastProject)
-							.map(({ _id, ProjectTitle, ProjectImgs, ProjectDescription }) => (
-								<Link
-									href={`./${section.split(' ').join('-')}/${_id}`}
-									key={_id}
-									className='flex flex-col  items-center bg-white border border-gray-200 rounded-lg shadow w-full md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700'>
-									<Image
-										className='object-cover w-full rounded-t-lg h-44 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg'
-										src={ProjectImgs[0].secure_url}
-										width={Number(ProjectImgs[0].width)}
-										height={Number(ProjectImgs[0].height)}
-										alt=''
-									/>
-									<div className='flex flex-col w-full p-4 overflow-hidden'>
-										<h5 className='mb-2 text-lg font-bold tracking-tight text-gray-900 dark:text-white'>
-											{ProjectTitle}
-										</h5>
-										<p className='mb-3 w-full h-full max-h-40 font-normal text-gray-700 dark:text-gray-400 truncate'>
-											{ProjectDescription}
-										</p>
-									</div>
-								</Link>
+							.map((project) => (
+								<ProjectCard key={project._id} project={project} section={section} />
 							))}
 					</div>
 				</div>
