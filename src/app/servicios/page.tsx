@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 const FetchServices = async () => {
 	const res = await fetch(`${process.env.SERVER_URL}/homeBanner/getHomeBanners`, {
 		next: {
-			revalidate: 60000
+			revalidate: 300
 		}
 	});
 	const data = await res.json();
