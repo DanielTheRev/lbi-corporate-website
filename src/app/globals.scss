@@ -18,11 +18,11 @@ html {
 }
 
 body {
-	@apply bg-slate-950;
+	@apply bg-neutral-100 dark:bg-slate-950;
 }
 
 .f-carousel {
-	@apply max-h-[600px];
+	@apply  max-h-[600px];
 	.f-carousel__slide {
 		border-radius: 6px !important;
 		overflow: hidden !important;
@@ -38,7 +38,6 @@ body {
 	--f-button-border-radius: 50%;
 	--f-button-shadow: 0 6px 12px -2px rgb(50 50 93 / 25%), 0 3px 7px -3px rgb(0 0 0 / 30%);
 
-	--f-button-bg: #333 !important;
 	--f-button-hover-bg: #f9f9f9;
 	--f-button-active-bg: #f0f0f0;
 }

@@ -1,6 +1,5 @@
 import { Project } from '@/app/nuestros-trabajos/models/projects.model';
 import Image from 'next/image';
-import Link from 'next/link';
 import GoProjectBtn from './components/goProjectBtn';
 
 interface Props {
@@ -10,22 +9,16 @@ interface Props {
 
 const LastProject: React.FC<Props> = ({ project, section }) => {
 	return (
-		<article className='flex flex-col w-full h-full max-w-[1200px] mx-auto bg-slate-800/10 px-4 py-5 gap-3 rounded-lg items-start text-white animate-fade-down animate-duration-[500ms]'>
+		<article className='flex flex-col w-full h-full max-w-[1200px] mx-auto bg-neutral-200/50 dark:bg-slate-800/10 px-4 py-5 gap-3 rounded-lg items-start animate-fade-down animate-duration-[500ms]'>
 			<span className='bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-blue-400 border border-blue-400'>
 				{section}
 			</span>
-			<header className='inline-flex w-full justify-between items-center gap-2'>
+			<header className='inline-flex w-full justify-between items-center gap-2 text-blue-700/80 dark:text-white'>
 				<h2 className='md:text-2xl'>{project.ProjectTitle}</h2>
 				<GoProjectBtn projectID={project._id} section={section} />
 			</header>
 			<div className='flex flex-col w-full overflow-hidden gap-4'>
-				<p
-					style={{
-						display: '-webkit-box',
-						WebkitBoxOrient: 'vertical',
-						WebkitLineClamp: 3
-					}}
-					className='w-full text-xs md:text-base text-gray-400 whitespace-pre-line overflow-hidden'>
+				<p className='w-full text-xs md:text-base text-slate-700 dark:text-gray-400 whitespace-pre-line line-clamp-2 overflow-hidden'>
 					{project.ProjectDescription}
 				</p>
 				<div className='flex w-full h-screen max-h-[100px] md:max-h-72 rounded gap-1 overflow-hidden'>

@@ -25,17 +25,17 @@ const Slider = ({ data }: Props) => {
 		<Swiper
 			modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
 			spaceBetween={50}
-			className='w-full overflow-hidden py-5 md:py-10'
+			className='w-full overflow-hidden my-3'
 			slidesPerView={1}
 			autoplay
 			pagination={{ clickable: true }}>
 			{NewsList.map((News) => (
-				<SwiperSlide className='rounded-md px-3 w-full h-full' key={News._id}>
+				<SwiperSlide className='rounded-md px-3 py-2 w-full h-full bg-neutral-200/50 dark:bg-slate-800/30' key={News._id}>
 					<NewsBanner data={News} />
 				</SwiperSlide>
 			))}
 
-			<SwiperSlide className='rounded-md px-3 w-full h-full'>
+			<SwiperSlide className='rounded-md px-3 py-2 w-full h-full bg-neutral-200/50 dark:bg-slate-800/30'>
 				<PresentacionBanner data={Presentacion} />
 			</SwiperSlide>
 		</Swiper>

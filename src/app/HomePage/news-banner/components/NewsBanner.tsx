@@ -1,7 +1,7 @@
 import { News } from '../../models/presentacion.model';
 import Image from 'next/image';
 
-interface Props {
+interface Props extends Omit<React.HtmlHTMLAttributes<HTMLDivElement>, 'children'> {
 	data: News;
 }
 
@@ -9,10 +9,10 @@ const NewsBanner: React.FC<Props> = ({ data: News }) => {
 	return (
 		<article className='flex flex-col justify-center w-full max-w-[1200px] mx-auto h-full my-2 gap-3'>
 			<div className='flex flex-col w-full gap-3'>
-				<header>
+				<header className='text-center'>
 					<h3 className='text-xl text-blue-600 text-pretty md:text-3xl'>{News.title}</h3>
 				</header>
-				<p className='w-full h-full text-xs md:text-lg text-pretty text-white/70'>
+				<p className='w-full h-full text-xs md:text-base text-pretty dark:text-white/70 text-slate-600'>
 					{News.description}
 				</p>
 			</div>

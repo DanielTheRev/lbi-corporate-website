@@ -21,7 +21,7 @@ const FancyProjectSlider: React.FC<Props> = ({ data }) => {
 				timeout: 1000
 			},
 			Thumbs: {
-				type: 'classic'
+				type: 'none'
 			}
 		};
 
