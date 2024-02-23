@@ -2,18 +2,13 @@ import { Project } from '../../models/projects.model';
 import FancyProjectSlider from '../components/FancyProjectSlider';
 
 const getProjectData = async (data: { section: string; _id: string }) => {
-	const res = await fetch(`${process.env.SERVER_URL}/projects/getProject`, {
-		method: 'POST',
-		body: JSON.stringify(data),
-		headers: {
-			'Content-Type': 'application/json'
-		},
+	const { section, _id } = data;
+	const res = await fetch(`${process.env.SERVER_URL}/projects/getProject/${section}/${_id}`, {
 		next: {
 			revalidate: 3600
 		}
 	});
-	const project = (await res.json()) as { status: string; project: Project };
-	return project;
+	return (await res.json()) as { status: string; project: Project };
 };
 interface Params {
 	params: { section: string; id: string };

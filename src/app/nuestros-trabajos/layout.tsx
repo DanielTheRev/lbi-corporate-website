@@ -8,16 +8,15 @@ export const metadata: Metadata = {
 const fetchSections = async (): Promise<{ label: string; route: string }[]> => {
 	const res = await fetch(`${process.env.SERVER_URL}/projects/getSections`, {
 		next: {
-			revalidate: 60000
+			revalidate: 3600
 		}
 	});
 
 	const data = await res.json();
-	const routes = data.reverse().map((route: any) => ({
+	return data.reverse().map((route: any) => ({
 		label: route.section,
 		route: `/nuestros-trabajos/${route.section.split(' ').join('-')}`
 	}));
-	return routes;
 };
 
 const NuestrosTrabajosLayout = async ({ children }: any) => {

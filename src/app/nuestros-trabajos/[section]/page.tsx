@@ -2,22 +2,15 @@ import LastProject from '@/app/components/LastProject/LastProject';
 import { Section } from '../models/projects.model';
 import ProjectCard from './components/ProjectCard/ProjectCard';
 
-const getSectionData = async (section: string) => {
-	const body = {
-		section: section.split('-').join(' ')
-	};
-	const res = await fetch(`${process.env.SERVER_URL}/projects/getSectionData`, {
-		method: 'POST',
-		body: JSON.stringify(body),
-		headers: {
-			'Content-Type': 'application/json'
-		},
+const getSectionData = async (_section: string) => {
+	const section = _section.split('-').join(' ');
+	console.log('Obteniendo: Section Data');
+	const res = await fetch(`${process.env.SERVER_URL}/projects/getSectionData/${section}`, {
 		next: {
 			revalidate: 3600
 		}
 	});
-	const data = await res.json();
-	return data as Section;
+	return (await res.json()) as Section;
 };
 
 const TrabajosPage = async ({ params }: any) => {

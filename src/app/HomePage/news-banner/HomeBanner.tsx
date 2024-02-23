@@ -1,6 +1,17 @@
 import LastProject from '@/app/components/LastProject/LastProject';
-import { GetBanners } from '@/app/services/banners.service';
 import NewsBannerSlider from './components/NewsBannerSlider';
+import { BannersResponse } from '@/app/models/banners.model';
+
+export async function GetBanners(): Promise<BannersResponse> {
+	console.log('ObteniendoBanners');
+	const res = await fetch(`${process.env.SERVER_URL}/presentacion/getInfoPresentacion`, {
+		next: {
+			revalidate: 3600
+		}
+	});
+
+	return res.json();
+}
 
 const HomeBanner = async () => {
 	const banners = await GetBanners();

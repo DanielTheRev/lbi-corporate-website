@@ -4,14 +4,10 @@ import { Project } from '@/app/nuestros-trabajos/models/projects.model';
 import { News, PresentacionInfo } from '../../models/presentacion.model';
 
 import { useEffect, useRef } from 'react';
-import Image from 'next/image';
 
-import { Fancybox } from '@fancyapps/ui';
 import { Carousel } from '@fancyapps/ui/';
 import { Autoplay } from '@fancyapps/ui/dist/carousel/carousel.autoplay.esm.js';
-import { Thumbs } from '@fancyapps/ui/dist/carousel/carousel.thumbs.esm.js';
 import NewsBanner from './NewsBanner';
-import { OptionsType } from '@fancyapps/ui/types/Carousel/options';
 import PresentacionBanner from './PresentationBanner';
 
 interface Props {
