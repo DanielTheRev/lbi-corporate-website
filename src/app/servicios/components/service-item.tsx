@@ -8,7 +8,7 @@ interface Props {
 
 const ServiceItem = ({ service }: Props) => {
 	return (
-		<article className='flex flex-col md:flex-row md:even:flex-row-reverse max-w-[1200px] mx-auto p-1 items-center bg-white border border-gray-200 rounded-lg shadow  hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800/10 dark:hover:bg-gray-700/50 animate-fade-left animate-duration-[500ms]'>
+		<article className='flex flex-col md:flex-row md:even:flex-row-reverse max-w-[1200px] mx-auto p-1 items-center bg-white border border-gray-200 rounded-lg shadow  hover:bg-gray-100 animate-fade-left animate-duration-[500ms]'>
 			<Image
 				className='object-cover w-full max-w-[500px] rounded-md'
 				src={service.images[0].imgRef.secure_url}
@@ -18,10 +18,10 @@ const ServiceItem = ({ service }: Props) => {
 				priority
 			/>
 			<div className='flex flex-col justify-between p-4 leading-normal'>
-				<h5 className='mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-blue-700'>
+				<h5 className='mb-2 text-2xl font-bold tracking-tight text-blue-700/80'>
 					{service.banner}
 				</h5>
-				<p className='mb-3 text-xs md:text-base font-semibold md:font-normal text-gray-700 dark:text-gray-400 whitespace-pre-wrap text-pretty'>
+				<p className='mb-3 text-xs md:text-base font-semibold md:font-normal text-gray-700 whitespace-pre-wrap text-pretty'>
 					{service.description}
 				</p>
 

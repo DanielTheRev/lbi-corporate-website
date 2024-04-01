@@ -11,11 +11,11 @@ const PresentacionBanner: React.FC<Props> = ({ data }) => {
 			<div className='flex flex-col w-full max-w-[1200px] mx-auto h-full justify-center items-center gap-5'>
 				<div className='flex w-full justify-center items-center'>
 					<div className='flex flex-col w-full justify-center items-center'>
-						<header className='text-center mb-4 text-blue-700/80 dark:text-white'>
+						<header className='text-center mb-4 text-blue-700/80'>
 							<h1 className='text-3xl'>LBI CONSTRUCCIONES </h1>
 						</header>
 
-						<p className='w-full md:max-w-[75%] text-xs md:text-base text-slate-600 dark:text-white/70 text-pretty text-center whitespace-pre-line'>
+						<p className='w-full md:max-w-[75%] text-xs md:text-base text-slate-600 text-pretty text-center whitespace-pre-line'>
 							{data.description}
 						</p>
 					</div>

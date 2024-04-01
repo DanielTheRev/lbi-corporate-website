@@ -19,7 +19,7 @@ const TrabajosPage = async ({ params }: any) => {
 
 	if (data.length <= 0)
 		return (
-			<section className='flex w-full max-w-[1200px] mx-auto h-screen justify-center items-center text-2xl max-[400px]:text-xl text-slate-500 dark:text-white/70'>
+			<section className='flex w-full max-w-[1200px] mx-auto h-screen justify-center items-center text-2xl max-[400px]:text-xl text-slate-500'>
 				Todavía no hay proyectos que mostrar <br />
 				Puedes revisar nuestras demás secciones para conocer mas de nuestro trabajo.
 			</section>
@@ -33,8 +33,8 @@ const TrabajosPage = async ({ params }: any) => {
 			)}
 			{data.length >= 2 && (
 				<div className='flex flex-col w-full h-full p-3'>
-					<header className='flex w-full justify-start text-blue-500 dark:text-white/70'>
-						<h3 className='text-xl md:text-2xl p-2 pb-3'>También te puede interesar:</h3>
+					<header className='flex w-full justify-start text-blue-500'>
+						<h3 className='text-xl md:text-2xl p-2 pb-3'>También te puede interesar</h3>
 					</header>
 					<div className='w-full h-full flex flex-wrap gap-2'>
 						{data

@@ -12,7 +12,7 @@ const NewsBanner: React.FC<Props> = ({ data: News }) => {
 				<header className='text-center'>
 					<h3 className='text-xl text-blue-600 text-pretty md:text-3xl'>{News.title}</h3>
 				</header>
-				<p className='w-full md:max-w-[75%] mx-auto h-full text-xs md:text-base text-pretty dark:text-white/70 text-slate-600 whitespace-pre-line'>
+				<p className='w-full md:max-w-[75%] mx-auto h-full text-xs md:text-base text-pretty text-slate-600 whitespace-pre-line'>
 					{News.description}
 				</p>
 			</div>

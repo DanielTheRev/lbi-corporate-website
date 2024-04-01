@@ -43,7 +43,7 @@ const NewsBannerSlider: React.FC<Props> = ({ data }) => {
 
 	return (
 		<div
-			className='f-carousel py-5 overflow-hidden bg-neutral-200/50 dark:bg-slate-800/30'
+			className='f-carousel py-5 overflow-hidden bg-neutral-200/50'
 			id='myCarousel'
 			ref={container_ref}>
 			<div className='f-carousel__slide'>
